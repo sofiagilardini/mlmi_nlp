@@ -1,0 +1,235 @@
+----------- ** classifying reviews using sentiment lexicon ** ---------- 
+Question: Q 0.1 part_a 
+token-only results: 0.68, 
+-------------------------
+Question: Q 0.1 part_b 
+magnitude results:0.69, 
+-------------------------
+Question: Q 0.2 
+-> Magnitude lexicon results are not significant with respect to token-only, 
+-------------------------
+
+ 
+ 
+--------- ** classifying reviews using Naive Bayes on held-out test set ** ----------- 
+
+ 
+Question: Q 1.0 
+Accuracy without smoothing: 0.51, 
+-------------------------
+
+ 
+ 
+Question: Q 2.0 
+Accuracy using smoothing: 0.82, 
+-------------------------
+
+ 
+Question: Q 2.1 
+-> Results using smoothing are significant with respect to no smoothing, 
+-------------------------
+
+ 
+ 
+--------- ** NB: Cross-Validation ** ---------------- 
+Q 3.0 
+Test fold: 0; 
+ Accuracy: 0.770000 
+ Std. Dev: 0.087178 
+Test fold: 1; 
+ Accuracy: 0.810000 
+ Std. Dev: 0.072629 
+Test fold: 2; 
+ Accuracy: 0.813333 
+ Std. Dev: 0.052068 
+Test fold: 3; 
+ Accuracy: 0.818750 
+ Std. Dev: 0.046182 
+Test fold: 4; 
+ Accuracy: 0.813000 
+ Std. Dev: 0.035511 
+Test fold: 5; 
+ Accuracy: 0.817500 
+ Std. Dev: 0.031721 
+Test fold: 6; 
+ Accuracy: 0.817857 
+ Std. Dev: 0.029146 
+Test fold: 7; 
+ Accuracy: 0.816250 
+ Std. Dev: 0.019804 
+Test fold: 8; 
+ Accuracy: 0.811667 
+ Std. Dev: 0.029861 
+Test fold: 9; 
+ Accuracy: 0.813000 
+ Std. Dev: 0.025904 
+
+ 
+Q 3.0 
+Average of performances across folds: 
+Accuracy across folds: 0.813 
+Std. Dev across folds: 0.026 
+
+ 
+ 
+-------------- ** NB: Cross-Validation with Stemming ** ---------------- 
+Q 4.0 
+Test fold: 0; 
+ Accuracy: 0.770000 
+ Std. Dev: 0.090000 
+Test fold: 1; 
+ Accuracy: 0.802500 
+ Std. Dev: 0.075374 
+Test fold: 2; 
+ Accuracy: 0.810000 
+ Std. Dev: 0.042947 
+Test fold: 3; 
+ Accuracy: 0.816250 
+ Std. Dev: 0.047779 
+Test fold: 4; 
+ Accuracy: 0.814000 
+ Std. Dev: 0.032619 
+Test fold: 5; 
+ Accuracy: 0.812500 
+ Std. Dev: 0.032329 
+Test fold: 6; 
+ Accuracy: 0.815714 
+ Std. Dev: 0.029589 
+Test fold: 7; 
+ Accuracy: 0.816875 
+ Std. Dev: 0.018125 
+Test fold: 8; 
+ Accuracy: 0.812778 
+ Std. Dev: 0.026649 
+Test fold: 9; 
+ Accuracy: 0.813000 
+ Std. Dev: 0.021932 
+
+ 
+Q 4.0 
+Average of performances across folds: 
+Accuracy across folds: 0.813 
+Std. Dev across folds: 0.022 
+
+ 
+Question: Q 4.1 
+-> Results using smoothing are significant with respect to no smoothing <-, 
+-------------------------
+
+ 
+
+ 
+Q 4.2 
+--------------- ** determining the number of features before/after stemming ** --------- 
+-> Number of features before stemming: 52555 
+ Number of features after stemming: 32404 
+
+ 
+ 
+--------------- ** NB: Cross-Validation with Smoothing and Bigrams ** ---------------- 
+Q 5.0 
+Test fold: 0; 
+ Accuracy: 0.765000 
+ Std. Dev: 0.118427 
+Test fold: 1; 
+ Accuracy: 0.810000 
+ Std. Dev: 0.100747 
+Test fold: 2; 
+ Accuracy: 0.821667 
+ Std. Dev: 0.067926 
+Test fold: 3; 
+ Accuracy: 0.827500 
+ Std. Dev: 0.062199 
+Test fold: 4; 
+ Accuracy: 0.826000 
+ Std. Dev: 0.064062 
+Test fold: 5; 
+ Accuracy: 0.825833 
+ Std. Dev: 0.041071 
+Test fold: 6; 
+ Accuracy: 0.827857 
+ Std. Dev: 0.032016 
+Test fold: 7; 
+ Accuracy: 0.830000 
+ Std. Dev: 0.015762 
+Test fold: 8; 
+ Accuracy: 0.828333 
+ Std. Dev: 0.031471 
+Test fold: 9; 
+ Accuracy: 0.830000 
+ Std. Dev: 0.024900 
+
+ 
+Q 5.0 part_a 
+Average of performances across folds: 
+Accuracy across folds: 0.830 
+Std. Dev across folds: 0.025 
+
+ 
+ 
+
+ 
+
+ 
+Q 5.0 part_b 
+ -> Results using smoothing and bigrams are not significant with respect to smoothing only 
+
+ 
+Q 5.1 part_a 
+-> Number of features Stemmed+Bigram: 500086 
+-> Number of features from Q3: 52555 
+
+ 
+ 
+--------------- ** NB: Cross-Validation with Smoothing and Trigrams ** ---------------- 
+Q 5.0 
+Test fold: 0; 
+ Accuracy: 0.770000 
+ Std. Dev: 0.155242 
+Test fold: 1; 
+ Accuracy: 0.800000 
+ Std. Dev: 0.129422 
+Test fold: 2; 
+ Accuracy: 0.813333 
+ Std. Dev: 0.108218 
+Test fold: 3; 
+ Accuracy: 0.815000 
+ Std. Dev: 0.089233 
+Test fold: 4; 
+ Accuracy: 0.814000 
+ Std. Dev: 0.103942 
+Test fold: 5; 
+ Accuracy: 0.810833 
+ Std. Dev: 0.056893 
+Test fold: 6; 
+ Accuracy: 0.815000 
+ Std. Dev: 0.041459 
+Test fold: 7; 
+ Accuracy: 0.817500 
+ Std. Dev: 0.016489 
+Test fold: 8; 
+ Accuracy: 0.815000 
+ Std. Dev: 0.028873 
+Test fold: 9; 
+ Accuracy: 0.818000 
+ Std. Dev: 0.023580 
+
+ 
+Q 5.0 part_a 
+Average of performances across folds: 
+Accuracy across folds: 0.818 
+Std. Dev across folds: 0.024 
+
+ 
+ 
+
+ 
+
+ 
+Q 5.0 part_b 
+ -> Results using Smoothing + Trigrams are not significant with respect to smoothing only 
+
+ 
+Q 5.1 part_a 
+-> Number of features Smoothing+Trigram: 1015074 
+-> Number of features from Q3: 52555 
