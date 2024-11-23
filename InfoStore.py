@@ -45,3 +45,32 @@ class figurePlotting():
         plot_dir = './Figures'
 
         plt.savefig(f'{plot_dir}/Q0_heatmap.png')
+
+
+
+class resultsWrite():
+
+    def __init__(self, filename = "Results.txt"):
+
+        # default filename will be Results.txt but can be changed. 
+
+        self.filename = filename
+        
+
+    def refreshResults(self):
+
+        with open(self.filename, 'w') as file:
+            
+            # Opening in 'w' mode clears the file. 
+            pass
+
+
+    def savePrint(self, Q_no, print_st):
+
+        with open(self.filename, 'a') as file:
+            file.write(f"Question: {Q_no} \n")
+            file.write(f'{print_st}, \n')
+            file.write("-------------------------\n")
+
+
+

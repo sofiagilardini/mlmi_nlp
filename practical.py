@@ -4,6 +4,13 @@ from Statistics import SignTest
 from Classifiers import NaiveBayesText, SVMText
 from Extensions import SVMDoc2Vec
 from InfoStore import figurePlotting
+from InfoStore import resultsWrite
+
+
+
+results = resultsWrite("Results.txt")
+results.refreshResults()
+
 
 # retrieve corpus
 corpus=MovieReviewCorpus(stemming=False,pos=False)
@@ -11,12 +18,16 @@ corpus=MovieReviewCorpus(stemming=False,pos=False)
 # use sign test for all significance testing
 signTest=SignTest()
 
-print("--- classifying reviews using sentiment lexicon  ---")
+print_st = "--- classifying reviews using sentiment lexicon  ---"
+
+print(print_st)
+results.savePrint(Q_no = '0.0', print_st=print_st)
+
 
 # read in lexicon
 lexicon=SentimentLexicon()
 
-breakpoint()
+# breakpoint()
 
 
 # on average there are more positive than negative words per review (~7.13 more positive than negative per review)
@@ -26,22 +37,35 @@ threshold=8
 # question 0.1
 lexicon.classify(corpus.reviews,threshold,magnitude=False)
 token_preds=lexicon.predictions
-print(f"token-only results: {lexicon.getAccuracy():.2f}")
 
-breakpoint()
+
+print_st = f"token-only results: {lexicon.getAccuracy():.2f}"
+print(print_st)
+results.savePrint(Q_no="Q 0.1 a)", print_st=print_st)
+
+
+# breakpoint()
 
 lexicon.classify(corpus.reviews,threshold,magnitude=True)
 magnitude_preds=lexicon.predictions
-print(f"magnitude results:{lexicon.getAccuracy():.2f}")
 
-breakpoint()
+print_st = f"magnitude results:{lexicon.getAccuracy():.2f}"
+print(print_st)
+results.savePrint(Q_no="Q 0.1 b)", print_st=print_st)
+
+
+# breakpoint()
 
 # question 0.2
+Q_no = "Q 0.2"
 p_value=signTest.getSignificance(token_preds,magnitude_preds)
 significance = "significant" if p_value < 0.05 else "not significant"
-print(f"magnitude lexicon results are {significance} with respect to token-only")
 
-breakpoint()
+print_st = f"magnitude lexicon results are {significance} with respect to token-only"
+print(print_st)
+results.savePrint(Q_no, print_st)
+
+# breakpoint()
 
 
 # ------ plot heatmap ------- #
