@@ -148,35 +148,54 @@ del print_st, Q_no
 # question 3.0
 print("--- classifying reviews using 10-fold cross-evaluation ---")
 # using previous instantiated object
-NB.crossValidate(corpus)
+NB.crossValidate(corpus, Q_no = "Q 3.0")
 # using cross-eval for smoothed predictions from now on
-smoothed_preds=NB.predictions
-# print(f"Accuracy: {NB.getAccuracy():.3f}")
-# print(f"Std. Dev: {NB.getStdDeviation()}")
+smoothed_preds=NB.predictions # this just takes the latest fold ? 
+print(f"Accuracy: {NB.getAccuracy():.3f}")
+print(f"Std. Dev: {NB.getStdDeviation()}")
 
-breakpoint()
+# breakpoint()
 
 # question 4.0
 print("--- stemming corpus ---")
 # retrieve corpus with tokenized text and stemming (using porter)
 stemmed_corpus=MovieReviewCorpus(stemming=True,pos=False)
 print("--- cross-validating NB using stemming ---")
-NB.crossValidate(stemmed_corpus)
+NB.crossValidate(stemmed_corpus, Q_no = "Q 4.0")
 stemmed_preds=NB.predictions
 print(f"Accuracy: {NB.getAccuracy():.3f}")
 print(f"Std. Dev: {NB.getStdDeviation():.3f}")
 
+
 # TODO Q4.1
 # see if stemming significantly improves results on smoothed NB
 
+Q_no = "Q 4.1"
+
+p_value=signTest.getSignificance(non_smoothed_preds,smoothed_preds)
+significance = "significant" if p_value < 0.05 else "not significant"
+
+print_st = f"-> Results using smoothing are {significance} with respect to no smoothing"
+print(print_st)
+results.savePrint(Q_no, print_st)
+
+
 # TODO Q4.2
-print("--- determining the number of features before/after stemming ---")
+
+results.savePrint_noQ("Q 4.2")
+results.savePrint_noQ("--- determining the number of features before/after stemming ---")
+
+
+num_stemmed_features = len(NB.vocabulary)
+print(f'Number of features before stemming: {num_non_stemmed_features} \n Number of features after stemming: {num_stemmed_features}')
+results.savePrint_noQ(f'Number of features before stemming: {num_non_stemmed_features} \n Number of features after stemming: {num_stemmed_features}')
+
 
 # question Q5.0
 # cross-validate model using smoothing and bigrams
 print("--- cross-validating naive bayes using smoothing and bigrams ---")
 NB=NaiveBayesText(smoothing=True,bigrams=True,trigrams=False,discard_closed_class=False)
-NB.crossValidate(corpus)
+NB.crossValidate(corpus, "Q 5.0")
 smoothed_and_bigram_preds=NB.predictions
 print(f"Accuracy: {NB.getAccuracy():.2f}") 
 print(f"Std. Dev: {NB.getStdDeviation():.2f}")

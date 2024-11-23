@@ -149,7 +149,7 @@ class NaiveBayesText(Evaluation):
         @type reviews: list of (string, list) tuples corresponding to (label, content)
         """
 
-        self.predictions = []
+        # self.predictions = []
 
         i = 0
 
@@ -177,8 +177,6 @@ class NaiveBayesText(Evaluation):
                 self.predictions.append('+')
             else:
                 self.predictions.append('-')
-
-            # print(self.predictions[:20])
 
 
 class SVMText(Evaluation):

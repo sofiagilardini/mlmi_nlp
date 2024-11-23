@@ -5,7 +5,7 @@ class Evaluation():
     """
     general evaluation class implemented by classifiers
     """
-    def crossValidate(self,corpus):
+    def crossValidate(self,corpus, Q_no):
 
         from InfoStore import figurePlotting, resultsWrite
 
@@ -25,8 +25,6 @@ class Evaluation():
         self.predictions=[]
 
         print("HERE")
-        # reset predictions
-        self.predictions=[]
 
         splits = {}
 
@@ -43,6 +41,8 @@ class Evaluation():
         index_list = np.arange(len(corpus.folds))
 
         CV_dict = {}
+
+        results_list = []
 
         for counter, index in enumerate(index_list):
             test_index = index
@@ -64,8 +64,6 @@ class Evaluation():
             self.test(test_files)
 
 
-            Q_no = "Q 3.0"
-
             print_st = f"Test fold: {test_index}; \n Accuracy: {self.getAccuracy():3f} \n Std. Dev: {self.getStdDeviation()}"
             print(print_st)
 
@@ -74,22 +72,21 @@ class Evaluation():
                 results.savePrint_noQ(print_st)
             else:
                 results.savePrint_noQ(print_st)
+            
+            results_list.append(self.getAccuracy())
 
-            CV_dict[test_index] = [self.getAccuracy(), self.getStdDeviation()]
+        avg_cv_acc = np.mean(results_list)
+        std_cv_acc = np.std(results_list)
 
-        
-        avg_cv_acc = np.mean([CV_dict[i][0] for i in index_list])
-        std_cv_acc = np.std([CV_dict[i][0] for i in index_list])
-        var_cv_acc = np.var([CV_dict[i][0] for i in index_list])
 
         results.savePrint_noQ('----------------------------------')
         results.savePrint_noQ("Average of performances across fold:")
         results.savePrint_noQ(f"Mean performance: {avg_cv_acc}")
         results.savePrint_noQ(f"Std between fold performances: {std_cv_acc}")
-        results.savePrint_noQ(f"Variance between fold performances: {var_cv_acc}")
+        # results.savePrint_noQ(f"Variance between fold performances: {var_cv_acc}")
 
-        print("Avg ACC", avg_cv_acc)
-        print("Avg Var", var_cv_acc)
+        print("Avg Acc: ", avg_cv_acc)
+        print("Var: ", std_cv_acc)
 
 
         # TODO Q3
