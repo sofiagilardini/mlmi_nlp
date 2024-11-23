@@ -72,5 +72,10 @@ class resultsWrite():
             file.write(f'{print_st}, \n')
             file.write("-------------------------\n")
 
+    def savePrint_noQ(self, print_st):
+
+        with open(self.filename, 'a') as file:
+            file.write(f'{print_st} \n')
+
 
 

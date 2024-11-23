@@ -11,6 +11,9 @@ from InfoStore import resultsWrite
 results = resultsWrite("Results.txt")
 results.refreshResults()
 
+plotting = figurePlotting()
+
+
 
 # retrieve corpus
 corpus=MovieReviewCorpus(stemming=False,pos=False)
@@ -18,11 +21,12 @@ corpus=MovieReviewCorpus(stemming=False,pos=False)
 # use sign test for all significance testing
 signTest=SignTest()
 
-print_st = "--- classifying reviews using sentiment lexicon  ---"
+print_st = "----------- ** classifying reviews using sentiment lexicon ** ----------"
 
 print(print_st)
-results.savePrint(Q_no = '0.0', print_st=print_st)
+results.savePrint_noQ(print_st)
 
+del print_st
 
 # read in lexicon
 lexicon=SentimentLexicon()
@@ -38,20 +42,26 @@ threshold=8
 lexicon.classify(corpus.reviews,threshold,magnitude=False)
 token_preds=lexicon.predictions
 
-
+Q_no = "Q 0.1 part_a"
 print_st = f"token-only results: {lexicon.getAccuracy():.2f}"
 print(print_st)
-results.savePrint(Q_no="Q 0.1 a)", print_st=print_st)
+results.savePrint(Q_no, print_st)
+
+del print_st, Q_no
 
 
 # breakpoint()
+
+Q_no="Q 0.1 part_b"
 
 lexicon.classify(corpus.reviews,threshold,magnitude=True)
 magnitude_preds=lexicon.predictions
 
 print_st = f"magnitude results:{lexicon.getAccuracy():.2f}"
 print(print_st)
-results.savePrint(Q_no="Q 0.1 b)", print_st=print_st)
+results.savePrint(Q_no, print_st)
+
+del print_st, Q_no
 
 
 # breakpoint()
@@ -65,45 +75,80 @@ print_st = f"magnitude lexicon results are {significance} with respect to token-
 print(print_st)
 results.savePrint(Q_no, print_st)
 
+del print_st, Q_no
+
+
 # breakpoint()
 
 
 # ------ plot heatmap ------- #
 
-plotting = figurePlotting()
 plotting.plotHeatmap(threshold=threshold)
 
 # ------- end of heatmap --------- # 
 
 # question 1.0
-print("--- classifying reviews using Naive Bayes on held-out test set ---")
+
+Q_no = "Q 1.0"
+
+print_st = "--------- ** classifying reviews using Naive Bayes on held-out test set ** -----------"
+print(print_st)
+results.savePrint_noQ(print_st)
+
+del print_st
+
+
 NB=NaiveBayesText(smoothing=False,bigrams=False,trigrams=False,discard_closed_class=False)
 NB.train(corpus.train)
 NB.test(corpus.test)
 # store predictions from classifier
 non_smoothed_preds=NB.predictions
-print(f"Accuracy without smoothing: {NB.getAccuracy():.2f}")
+
+print_st = f"Accuracy without smoothing: {NB.getAccuracy():.2f}"
+print(print_st)
+results.savePrint(Q_no, print_st)
+
+del print_st, Q_no
+
 
 breakpoint()
 
 # question 2.0
 # use smoothing
+
+Q_no = "Q 2.0"
+
 NB=NaiveBayesText(smoothing=True,bigrams=False,trigrams=False,discard_closed_class=False)
 NB.train(corpus.train)
 NB.test(corpus.test)
 smoothed_preds=NB.predictions
 # saving this for use later
 num_non_stemmed_features=len(NB.vocabulary)
-print(f"Accuracy using smoothing: {NB.getAccuracy():.2f}")
+
+print_st = f"Accuracy using smoothing: {NB.getAccuracy():.2f}"
+print(print_st)
+results.savePrint(Q_no, print_st)
+
+del print_st, Q_no
+
 
 breakpoint()
 
 
 # question 2.1
 # see if smoothing significantly improves results
+
+Q_no = "Q 2.1"
+
 p_value=signTest.getSignificance(non_smoothed_preds,smoothed_preds)
 significance = "significant" if p_value < 0.05 else "not significant"
-print(f"results using smoothing are {significance} with respect to no smoothing")
+
+print_st = f"results using smoothing are {significance} with respect to no smoothing"
+print(print_st)
+results.savePrint(Q_no, print_st)
+
+del print_st, Q_no
+
 
 breakpoint()
 
