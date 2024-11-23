@@ -167,6 +167,8 @@ NB.crossValidate(corpus, Q_no = "Q 3.0")
 # using cross-eval for smoothed predictions from now on
 smoothed_preds=NB.predictions # this just takes the latest fold ? 
 
+results.savePrint_noQ("\n")
+
 results.savePrint_noQ(Q_no)
 results.savePrint_noQ("Average of performances across folds:")
 
@@ -195,8 +197,8 @@ NB.crossValidate(stemmed_corpus, Q_no = "Q 4.0")
 stemmed_preds=NB.predictions
 
 
-results.savePrint_noQ(Q_no)
 results.savePrint_noQ("\n")
+results.savePrint_noQ(Q_no)
 
 results.savePrint_noQ("Average of performances across folds:")
 
@@ -238,8 +240,8 @@ results.savePrint_noQ("--------------- ** determining the number of features bef
 
 
 num_stemmed_features = len(NB.vocabulary)
-print(f'Number of features before stemming: {num_non_stemmed_features} \n Number of features after stemming: {num_stemmed_features}')
-results.savePrint_noQ(f'Number of features before stemming: {num_non_stemmed_features} \n Number of features after stemming: {num_stemmed_features}')
+print(f'-> Number of features before stemming: {num_non_stemmed_features} \n Number of features after stemming: {num_stemmed_features}')
+results.savePrint_noQ(f'-> Number of features before stemming: {num_non_stemmed_features} \n Number of features after stemming: {num_stemmed_features}')
 
 results.savePrint_noQ("\n \n")
 
@@ -249,19 +251,18 @@ results.savePrint_noQ("\n \n")
 results.savePrint_noQ(f"--------------- ** NB: Cross-Validation with Smoothing and Bigrams ** ----------------")
 
 
-Q_no = "Q 5.0"
-print("--- cross-validating naive bayes using smoothing and bigrams ---")
+Q_no = "Q 5.0 part_a"
+print("--- cross-validating naive bayes using Smoothing + Bigrams ---")
 NB=NaiveBayesText(smoothing=True,bigrams=True,trigrams=False,discard_closed_class=False)
 NB.crossValidate(corpus, "Q 5.0")
 smoothed_and_bigram_preds=NB.predictions
 
-results.savePrint_noQ(Q_no)
 results.savePrint_noQ("\n")
-
+results.savePrint_noQ(Q_no)
 results.savePrint_noQ("Average of performances across folds:")
-
 results.savePrint_noQ(f"Accuracy across folds: {NB.getAccuracy():.3f}")
 results.savePrint_noQ(f"Std. Dev across folds: {NB.getStdDeviation():.3f}")
+
 print(f"Accuracy: {NB.getAccuracy():.2f}") 
 print(f"Std. Dev: {NB.getStdDeviation():.2f}")
 
@@ -274,20 +275,119 @@ results.savePrint_noQ("\n")
 
 
 # see if bigrams significantly improves results on smoothed NB only
+
+Q_no = "Q 5.0 part_b"
+results.savePrint_noQ("\n")
+results.savePrint_noQ(Q_no)
+
 p_value=signTest.getSignificance(smoothed_preds,smoothed_and_bigram_preds)
 signifance = "significant" if p_value < 0.05 else "not significant"
-print(f"results using smoothing and bigrams are {signifance} with respect to smoothing only")
+
+print_st = f" -> Results using smoothing and bigrams are {signifance} with respect to smoothing only"
+results.savePrint_noQ(print_st)
+
+print(print_st)
+
+del print_st, Q_no
 
 
 # TODO Q5.1
 
+Q_no = "Q 5.1 part_a (Smoothing + Bigram)" 
+
+
+# How many features does the BoW model have to take into account now?
+smoothed_and_bigram_features=len(NB.vocabulary)
+
+results.savePrint_noQ("\n")
+results.savePrint_noQ(Q_no)
+results.savePrint_noQ(f"-> Number of features Stemmed+Bigram: {smoothed_and_bigram_features}")
+
+
+# How does this compare to the number of features at Q3?
+results.savePrint_noQ(f"-> Number of features from Q3: {num_non_stemmed_features}")
+
+del Q_no
+
+
+
+# --------------- smoothing and trigrams ------------- #
+
+results.savePrint_noQ("\n \n")
+
+
+results.savePrint_noQ(f"--------------- ** NB: Cross-Validation with Smoothing and Trigrams ** ----------------")
+
+
+Q_no = "Q 5.0 part_a"
+print("--- Cross-validating naive bayes using Smoothing + Trigrams ---")
+NB=NaiveBayesText(smoothing=True,bigrams=False,trigrams=True,discard_closed_class=False)
+NB.crossValidate(corpus, "Q 5.0")
+smoothed_and_bigram_preds=NB.predictions
+
+results.savePrint_noQ("\n")
+results.savePrint_noQ(Q_no)
+results.savePrint_noQ("Average of performances across folds:")
+results.savePrint_noQ(f"Accuracy across folds: {NB.getAccuracy():.3f}")
+results.savePrint_noQ(f"Std. Dev across folds: {NB.getStdDeviation():.3f}")
+
+print(f"Accuracy: {NB.getAccuracy():.2f}") 
+print(f"Std. Dev: {NB.getStdDeviation():.2f}")
+
+results.savePrint_noQ("\n \n")
+
+del Q_no
+
+results.savePrint_noQ("\n")
+
+
+
+# see if bigrams significantly improves results on smoothed NB only
+
+Q_no = "Q 5.0 part_b"
+results.savePrint_noQ("\n")
+results.savePrint_noQ(Q_no)
+
+p_value=signTest.getSignificance(smoothed_preds,smoothed_and_bigram_preds)
+signifance = "significant" if p_value < 0.05 else "not significant"
+
+print_st = f" -> Results using Smoothing + Trigrams are {signifance} with respect to smoothing only"
+results.savePrint_noQ(print_st)
+
+print(print_st)
+
+del print_st, Q_no
+
+
+# TODO Q5.1
+
+Q_no = "Q 5.1 part_a (Smoothing + Trigrams)"
+
+
+# How many features does the BoW model have to take into account now?
+smoothed_and_bigram_features=len(NB.vocabulary)
+
+results.savePrint_noQ("\n")
+results.savePrint_noQ(Q_no)
+results.savePrint_noQ(f"-> Number of features Smoothing+Trigram: {smoothed_and_bigram_features}")
+
+
+# How does this compare to the number of features at Q3?
+results.savePrint_noQ(f"-> Number of features from Q3: {num_non_stemmed_features}")
+
+del Q_no
+
+
+
+
+
 # TODO Q6 and 6.1
-print("--- classifying reviews using SVM 10-fold cross-eval ---")
+print("-------------- ** Classifying reviews using SVM 10-fold cross-eval **-------------")
 
 # TODO Q7
-print("--- adding in POS information to corpus ---")
-print("--- training svm on word+pos features ----")
-print("--- training svm discarding closed-class words ---")
+print("----------- ** Adding in POS information to corpus **------------")
+print("----------- ** Training svm on word+pos features **-------------")
+print("----------- ** Training svm discarding closed-class words **------------")
 
 # question 8.0
-print("--- using document embeddings ---")
+print("----------- ** Using document embeddings **------------")
