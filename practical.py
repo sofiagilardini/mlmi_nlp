@@ -3,8 +3,7 @@ from Lexicon import SentimentLexicon
 from Statistics import SignTest
 from Classifiers import NaiveBayesText, SVMText
 from Extensions import SVMDoc2Vec
-from InfoStore import figurePlotting
-from InfoStore import resultsWrite
+from InfoStore import figurePlotting, resultsWrite
 
 
 
@@ -152,9 +151,10 @@ print("--- classifying reviews using 10-fold cross-evaluation ---")
 NB.crossValidate(corpus)
 # using cross-eval for smoothed predictions from now on
 smoothed_preds=NB.predictions
-print(f"Accuracy: {NB.getAccuracy():.3f}")
-print(f"Std. Dev: {NB.getStdDeviation()}")
+# print(f"Accuracy: {NB.getAccuracy():.3f}")
+# print(f"Std. Dev: {NB.getStdDeviation()}")
 
+breakpoint()
 
 # question 4.0
 print("--- stemming corpus ---")

@@ -1,12 +1,14 @@
 import math,sys
 import numpy as np
-from InfoStore import figurePlotting, resultsWrite
 
 class Evaluation():
     """
     general evaluation class implemented by classifiers
     """
     def crossValidate(self,corpus):
+
+        from InfoStore import figurePlotting, resultsWrite
+
         """
         function to perform 10-fold cross-validation for a classifier.
         each classifier will be inheriting from the evaluation class so you will have access
@@ -35,10 +37,14 @@ class Evaluation():
         #         splits[i] = list_review_fold[i]
 
 
+        results = resultsWrite()
+
 
         index_list = np.arange(len(corpus.folds))
 
-        for index in index_list:
+        CV_dict = {}
+
+        for counter, index in enumerate(index_list):
             test_index = index
             train_files = []
             test_files = []
@@ -56,13 +62,36 @@ class Evaluation():
 
             self.train(train_files)
             self.test(test_files)
-            print(f"test index, {test_index}; \n Accuracy: {self.getAccuracy():3f} \n Std. Dev: {self.getStdDeviation()}")
 
 
+            Q_no = "Q 3.0"
+
+            print_st = f"Test fold: {test_index}; \n Accuracy: {self.getAccuracy():3f} \n Std. Dev: {self.getStdDeviation()}"
+            print(print_st)
+
+            if counter == 0:
+                results.savePrint_noQ(Q_no)
+                results.savePrint_noQ(print_st)
+            else:
+                results.savePrint_noQ(print_st)
+
+            CV_dict[test_index] = [self.getAccuracy(), self.getStdDeviation()]
+
+        
+        avg_cv_acc = np.mean([CV_dict[i][0] for i in index_list])
+        std_cv_acc = np.std([CV_dict[i][0] for i in index_list])
+        var_cv_acc = np.var([CV_dict[i][0] for i in index_list])
+
+        results.savePrint_noQ('----------------------------------')
+        results.savePrint_noQ("Average of performances across fold:")
+        results.savePrint_noQ(f"Mean performance: {avg_cv_acc}")
+        results.savePrint_noQ(f"Std between fold performances: {std_cv_acc}")
+        results.savePrint_noQ(f"Variance between fold performances: {var_cv_acc}")
+
+        print("Avg ACC", avg_cv_acc)
+        print("Avg Var", var_cv_acc)
 
 
-
-        print(splits.keys())
         # TODO Q3
 
     def getStdDeviation(self):
