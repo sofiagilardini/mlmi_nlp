@@ -74,6 +74,7 @@ results.savePrint(Q_no, print_st)
 del print_st, Q_no
 
 
+results.savePrint_noQ("\n \n")
 
 
 # ------ plot heatmap ------- #
@@ -92,6 +93,8 @@ results.savePrint_noQ(print_st)
 
 del print_st
 
+results.savePrint_noQ("\n")
+
 
 NB=NaiveBayesText(smoothing=False,bigrams=False,trigrams=False,discard_closed_class=False)
 NB.train(corpus.train)
@@ -105,6 +108,8 @@ results.savePrint(Q_no, print_st)
 
 del print_st, Q_no
 
+
+results.savePrint_noQ("\n \n")
 
 
 # question 2.0
@@ -125,6 +130,7 @@ results.savePrint(Q_no, print_st)
 
 del print_st, Q_no
 
+results.savePrint_noQ("\n")
 
 
 
@@ -142,29 +148,67 @@ results.savePrint(Q_no, print_st)
 
 del print_st, Q_no
 
+results.savePrint_noQ("\n \n")
+
 
 # breakpoint()
 
 # question 3.0
+
+results.savePrint_noQ(f"--------- ** NB: Cross-Validation ** ----------------")
+
+
+Q_no = "Q 3.0"
+
+
 print("--- classifying reviews using 10-fold cross-evaluation ---")
 # using previous instantiated object
 NB.crossValidate(corpus, Q_no = "Q 3.0")
 # using cross-eval for smoothed predictions from now on
 smoothed_preds=NB.predictions # this just takes the latest fold ? 
+
+results.savePrint_noQ(Q_no)
+results.savePrint_noQ("Average of performances across folds:")
+
+results.savePrint_noQ(f"Accuracy across folds: {NB.getAccuracy():.3f}")
+results.savePrint_noQ(f"Std. Dev across folds: {NB.getStdDeviation():.3f}")
+
 print(f"Accuracy: {NB.getAccuracy():.3f}")
-print(f"Std. Dev: {NB.getStdDeviation()}")
+print(f"Std. Dev: {NB.getStdDeviation():.3f}")
+
+del Q_no
 
 # breakpoint()
 
+results.savePrint_noQ("\n \n")
+
+results.savePrint_noQ(f"-------------- ** NB: Cross-Validation with Stemming ** ----------------")
+
+
 # question 4.0
+Q_no = "Q 4.0"
 print("--- stemming corpus ---")
 # retrieve corpus with tokenized text and stemming (using porter)
 stemmed_corpus=MovieReviewCorpus(stemming=True,pos=False)
 print("--- cross-validating NB using stemming ---")
 NB.crossValidate(stemmed_corpus, Q_no = "Q 4.0")
 stemmed_preds=NB.predictions
+
+
+results.savePrint_noQ(Q_no)
+results.savePrint_noQ("\n")
+
+results.savePrint_noQ("Average of performances across folds:")
+
+results.savePrint_noQ(f"Accuracy across folds: {NB.getAccuracy():.3f}")
+results.savePrint_noQ(f"Std. Dev across folds: {NB.getStdDeviation():.3f}")
+
 print(f"Accuracy: {NB.getAccuracy():.3f}")
 print(f"Std. Dev: {NB.getStdDeviation():.3f}")
+
+del Q_no
+
+results.savePrint_noQ("\n")
 
 
 # TODO Q4.1
@@ -175,30 +219,58 @@ Q_no = "Q 4.1"
 p_value=signTest.getSignificance(non_smoothed_preds,smoothed_preds)
 significance = "significant" if p_value < 0.05 else "not significant"
 
-print_st = f"-> Results using smoothing are {significance} with respect to no smoothing"
+print_st = f"-> Results using smoothing are {significance} with respect to no smoothing <-"
 print(print_st)
 results.savePrint(Q_no, print_st)
+
+del Q_no
+
+results.savePrint_noQ("\n")
+results.savePrint_noQ("\n")
+
 
 
 # TODO Q4.2
 
 results.savePrint_noQ("Q 4.2")
-results.savePrint_noQ("--- determining the number of features before/after stemming ---")
+results.savePrint_noQ("--------------- ** determining the number of features before/after stemming ** ---------")
+
 
 
 num_stemmed_features = len(NB.vocabulary)
 print(f'Number of features before stemming: {num_non_stemmed_features} \n Number of features after stemming: {num_stemmed_features}')
 results.savePrint_noQ(f'Number of features before stemming: {num_non_stemmed_features} \n Number of features after stemming: {num_stemmed_features}')
 
+results.savePrint_noQ("\n \n")
 
 # question Q5.0
 # cross-validate model using smoothing and bigrams
+
+results.savePrint_noQ(f"--------------- ** NB: Cross-Validation with Smoothing and Bigrams ** ----------------")
+
+
+Q_no = "Q 5.0"
 print("--- cross-validating naive bayes using smoothing and bigrams ---")
 NB=NaiveBayesText(smoothing=True,bigrams=True,trigrams=False,discard_closed_class=False)
 NB.crossValidate(corpus, "Q 5.0")
 smoothed_and_bigram_preds=NB.predictions
+
+results.savePrint_noQ(Q_no)
+results.savePrint_noQ("\n")
+
+results.savePrint_noQ("Average of performances across folds:")
+
+results.savePrint_noQ(f"Accuracy across folds: {NB.getAccuracy():.3f}")
+results.savePrint_noQ(f"Std. Dev across folds: {NB.getStdDeviation():.3f}")
 print(f"Accuracy: {NB.getAccuracy():.2f}") 
 print(f"Std. Dev: {NB.getStdDeviation():.2f}")
+
+results.savePrint_noQ("\n \n")
+
+del Q_no
+
+results.savePrint_noQ("\n")
+
 
 
 # see if bigrams significantly improves results on smoothed NB only

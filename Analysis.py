@@ -64,7 +64,7 @@ class Evaluation():
             self.test(test_files)
 
 
-            print_st = f"Test fold: {test_index}; \n Accuracy: {self.getAccuracy():3f} \n Std. Dev: {self.getStdDeviation()}"
+            print_st = f"Test fold: {test_index}; \n Accuracy: {self.getAccuracy():3f} \n Std. Dev: {self.getStdDeviation():3f}"
             print(print_st)
 
             if counter == 0:
@@ -75,18 +75,18 @@ class Evaluation():
             
             results_list.append(self.getAccuracy())
 
-        avg_cv_acc = np.mean(results_list)
-        std_cv_acc = np.std(results_list)
+        # avg_cv_acc = np.mean(results_list)
+        # std_cv_acc = np.std(results_list)
 
 
-        results.savePrint_noQ('----------------------------------')
-        results.savePrint_noQ("Average of performances across fold:")
-        results.savePrint_noQ(f"Mean performance: {avg_cv_acc}")
-        results.savePrint_noQ(f"Std between fold performances: {std_cv_acc}")
-        # results.savePrint_noQ(f"Variance between fold performances: {var_cv_acc}")
+        # results.savePrint_noQ('----------------------------------')
+        # results.savePrint_noQ("Average of performances across fold:")
+        # results.savePrint_noQ(f"Mean performance: {avg_cv_acc}")
+        # results.savePrint_noQ(f"Std between fold performances: {std_cv_acc}")
+        # # results.savePrint_noQ(f"Variance between fold performances: {var_cv_acc}")
 
-        print("Avg Acc: ", avg_cv_acc)
-        print("Var: ", std_cv_acc)
+        # print("Avg Acc: ", avg_cv_acc)
+        # print("Var: ", std_cv_acc)
 
 
         # TODO Q3

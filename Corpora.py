@@ -76,11 +76,20 @@ class MovieReviewCorpus():
 
 
                             for line in lines:
-                                    
-                                parts = line.strip().split()
 
-                                if len(parts) == 2:
-                                    token, pos_tag = parts
+                                line = line.strip()
+
+                                # if " " in line:
+
+                                if not line:
+                                    continue
+                                
+                                token, pos_tag = line.rsplit(maxsplit = 1)
+                                    
+                                # parts = line.strip().split()
+
+                                # if len(parts) == 2:
+                                #     token, pos_tag = parts
 
                                 # stem the token if stemming is enabled
 
