@@ -31,7 +31,6 @@ del print_st
 # read in lexicon
 lexicon=SentimentLexicon()
 
-# breakpoint()
 
 
 # on average there are more positive than negative words per review (~7.13 more positive than negative per review)
@@ -50,7 +49,6 @@ results.savePrint(Q_no, print_st)
 del print_st, Q_no
 
 
-# breakpoint()
 
 Q_no="Q 0.1 part_b"
 
@@ -64,21 +62,19 @@ results.savePrint(Q_no, print_st)
 del print_st, Q_no
 
 
-# breakpoint()
 
 # question 0.2
 Q_no = "Q 0.2"
 p_value=signTest.getSignificance(token_preds,magnitude_preds)
 significance = "significant" if p_value < 0.05 else "not significant"
 
-print_st = f"magnitude lexicon results are {significance} with respect to token-only"
+print_st = f"-> Magnitude lexicon results are {significance} with respect to token-only"
 print(print_st)
 results.savePrint(Q_no, print_st)
 
 del print_st, Q_no
 
 
-# breakpoint()
 
 
 # ------ plot heatmap ------- #
@@ -111,7 +107,6 @@ results.savePrint(Q_no, print_st)
 del print_st, Q_no
 
 
-breakpoint()
 
 # question 2.0
 # use smoothing
@@ -132,7 +127,6 @@ results.savePrint(Q_no, print_st)
 del print_st, Q_no
 
 
-breakpoint()
 
 
 # question 2.1
@@ -143,14 +137,14 @@ Q_no = "Q 2.1"
 p_value=signTest.getSignificance(non_smoothed_preds,smoothed_preds)
 significance = "significant" if p_value < 0.05 else "not significant"
 
-print_st = f"results using smoothing are {significance} with respect to no smoothing"
+print_st = f"-> Results using smoothing are {significance} with respect to no smoothing"
 print(print_st)
 results.savePrint(Q_no, print_st)
 
 del print_st, Q_no
 
 
-breakpoint()
+# breakpoint()
 
 # question 3.0
 print("--- classifying reviews using 10-fold cross-evaluation ---")

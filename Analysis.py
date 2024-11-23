@@ -1,4 +1,6 @@
 import math,sys
+import numpy as np
+from InfoStore import figurePlotting, resultsWrite
 
 class Evaluation():
     """
@@ -26,12 +28,38 @@ class Evaluation():
 
         splits = {}
 
-        print("corpus folds[0][0]", corpus.folds[0][0])
 
-        for list_review_fold in corpus.folds:
-            for i in range(len(list_review_fold)):
-                print("here")
-                splits[i] = list_review_fold[i]
+        # for list_review_fold in corpus.folds:
+        #     for i in range(len(list_review_fold)):
+        #         print("here")
+        #         splits[i] = list_review_fold[i]
+
+
+
+        index_list = np.arange(len(corpus.folds))
+
+        for index in index_list:
+            test_index = index
+            train_files = []
+            test_files = []
+            
+            training_index_list = np.delete(index_list, index)
+            print(f'training: {training_index_list}, test: {test_index}')
+
+            # train_files = corpus.folds[training_index_list]
+            # test_files = corpus.folds[test_index]
+
+            for fold_indx in training_index_list:
+                train_files.extend(corpus.folds[fold_indx])
+
+            test_files = corpus.folds[test_index]
+
+            self.train(train_files)
+            self.test(test_files)
+            print(f"test index, {test_index}; \n Accuracy: {self.getAccuracy():3f} \n Std. Dev: {self.getStdDeviation()}")
+
+
+
 
 
         print(splits.keys())
