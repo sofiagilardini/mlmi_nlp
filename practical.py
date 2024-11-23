@@ -3,6 +3,7 @@ from Lexicon import SentimentLexicon
 from Statistics import SignTest
 from Classifiers import NaiveBayesText, SVMText
 from Extensions import SVMDoc2Vec
+from InfoStore import figurePlotting
 
 # retrieve corpus
 corpus=MovieReviewCorpus(stemming=False,pos=False)
@@ -27,15 +28,28 @@ lexicon.classify(corpus.reviews,threshold,magnitude=False)
 token_preds=lexicon.predictions
 print(f"token-only results: {lexicon.getAccuracy():.2f}")
 
+breakpoint()
+
 lexicon.classify(corpus.reviews,threshold,magnitude=True)
 magnitude_preds=lexicon.predictions
 print(f"magnitude results:{lexicon.getAccuracy():.2f}")
+
+breakpoint()
 
 # question 0.2
 p_value=signTest.getSignificance(token_preds,magnitude_preds)
 significance = "significant" if p_value < 0.05 else "not significant"
 print(f"magnitude lexicon results are {significance} with respect to token-only")
 
+breakpoint()
+
+
+# ------ plot heatmap ------- #
+
+plotting = figurePlotting()
+plotting.plotHeatmap(threshold=threshold)
+
+# ------- end of heatmap --------- # 
 
 # question 1.0
 print("--- classifying reviews using Naive Bayes on held-out test set ---")
@@ -45,6 +59,8 @@ NB.test(corpus.test)
 # store predictions from classifier
 non_smoothed_preds=NB.predictions
 print(f"Accuracy without smoothing: {NB.getAccuracy():.2f}")
+
+breakpoint()
 
 # question 2.0
 # use smoothing
@@ -56,12 +72,16 @@ smoothed_preds=NB.predictions
 num_non_stemmed_features=len(NB.vocabulary)
 print(f"Accuracy using smoothing: {NB.getAccuracy():.2f}")
 
+breakpoint()
+
 
 # question 2.1
 # see if smoothing significantly improves results
 p_value=signTest.getSignificance(non_smoothed_preds,smoothed_preds)
 significance = "significant" if p_value < 0.05 else "not significant"
 print(f"results using smoothing are {significance} with respect to no smoothing")
+
+breakpoint()
 
 # question 3.0
 print("--- classifying reviews using 10-fold cross-evaluation ---")

@@ -19,6 +19,22 @@ class Evaluation():
         """
         # reset predictions
         self.predictions=[]
+
+        print("HERE")
+        # reset predictions
+        self.predictions=[]
+
+        splits = {}
+
+        print("corpus folds[0][0]", corpus.folds[0][0])
+
+        for list_review_fold in corpus.folds:
+            for i in range(len(list_review_fold)):
+                print("here")
+                splits[i] = list_review_fold[i]
+
+
+        print(splits.keys())
         # TODO Q3
 
     def getStdDeviation(self):
