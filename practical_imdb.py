@@ -122,7 +122,6 @@ def load_model(save_dir, dm, vector_size, window, min_count):
         raise FileNotFoundError(f"Model {model_filename} does not exist.")
     
 
-
 parameter_grid = {
 
     'dm' : [0, 1], 
@@ -153,13 +152,11 @@ for dm, vector_size, window, min_count, epochs in param_combinations:
         epochs=epochs)
     
 
-model_path = './Doc2VecModels'
-
 
 for dm, vector_size, window, min_count, epochs in param_combinations:
 
     model_id, doc2vec_model = load_model(
-        save_dir=model_path, 
+        save_dir=model_dir, 
         dm = dm, 
         vector_size=vector_size, 
         window=window, 
