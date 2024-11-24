@@ -159,26 +159,17 @@ results.savePrint_noQ(f"--------- ** NB: Cross-Validation ** ----------------")
 
 
 Q_no = "Q 3.0"
+Q_id = "Q3_NB_CV"
 
 
 print("--- classifying reviews using 10-fold cross-evaluation ---")
 # using previous instantiated object
-NB.crossValidate(corpus, Q_no = "Q 3.0")
+NB.crossValidate(corpus, Q_no = "Q 3.0", Q_id=Q_id)
 # using cross-eval for smoothed predictions from now on
 smoothed_preds=NB.predictions # this just takes the latest fold ? 
 
-results.savePrint_noQ("\n")
 
-results.savePrint_noQ(Q_no)
-results.savePrint_noQ("Average of performances across folds:")
-
-results.savePrint_noQ(f"Accuracy across folds: {NB.getAccuracy():.3f}")
-results.savePrint_noQ(f"Std. Dev across folds: {NB.getStdDeviation():.3f}")
-
-print(f"Accuracy: {NB.getAccuracy():.3f}")
-print(f"Std. Dev: {NB.getStdDeviation():.3f}")
-
-del Q_no
+del Q_no, Q_id
 
 # breakpoint()
 
@@ -189,26 +180,17 @@ results.savePrint_noQ(f"-------------- ** NB: Cross-Validation with Stemming ** 
 
 # question 4.0
 Q_no = "Q 4.0"
+Q_id = "Q4_NB_CV_withStem"
+
 print("--- stemming corpus ---")
 # retrieve corpus with tokenized text and stemming (using porter)
 stemmed_corpus=MovieReviewCorpus(stemming=True,pos=False)
 print("--- cross-validating NB using stemming ---")
-NB.crossValidate(stemmed_corpus, Q_no = "Q 4.0")
+NB.crossValidate(stemmed_corpus, Q_no = "Q 4.0", Q_id = Q_id)
 stemmed_preds=NB.predictions
 
 
-results.savePrint_noQ("\n")
-results.savePrint_noQ(Q_no)
-
-results.savePrint_noQ("Average of performances across folds:")
-
-results.savePrint_noQ(f"Accuracy across folds: {NB.getAccuracy():.3f}")
-results.savePrint_noQ(f"Std. Dev across folds: {NB.getStdDeviation():.3f}")
-
-print(f"Accuracy: {NB.getAccuracy():.3f}")
-print(f"Std. Dev: {NB.getStdDeviation():.3f}")
-
-del Q_no
+del Q_no, Q_id
 
 results.savePrint_noQ("\n")
 
@@ -252,23 +234,16 @@ results.savePrint_noQ(f"--------------- ** NB: Cross-Validation with Smoothing a
 
 
 Q_no = "Q 5.0 part_a (Smoothing + Bigrams)"
+Q_id = "Q5.0_NB_Smooth_Bigram"
 print("--- cross-validating naive bayes using Smoothing + Bigrams ---")
 NB=NaiveBayesText(smoothing=True,bigrams=True,trigrams=False,discard_closed_class=False)
-NB.crossValidate(corpus, "Q 5.0")
+NB.crossValidate(corpus, "Q 5.0", Q_id=Q_id)
 smoothed_and_bigram_preds=NB.predictions
 
-results.savePrint_noQ("\n")
-results.savePrint_noQ(Q_no)
-results.savePrint_noQ("Average of performances across folds:")
-results.savePrint_noQ(f"Accuracy across folds: {NB.getAccuracy():.3f}")
-results.savePrint_noQ(f"Std. Dev across folds: {NB.getStdDeviation():.3f}")
-
-print(f"Accuracy: {NB.getAccuracy():.2f}") 
-print(f"Std. Dev: {NB.getStdDeviation():.2f}")
 
 results.savePrint_noQ("\n \n")
 
-del Q_no
+del Q_no, Q_id
 
 results.savePrint_noQ("\n")
 
@@ -320,23 +295,17 @@ results.savePrint_noQ(f"--------------- ** NB: Cross-Validation with Smoothing a
 
 
 Q_no = "Q 5.0 part_a (Smoothing + Trigrams)"
+Q_id = "Q5.0_NB_Smooth_Trigram"
+
 print("--- Cross-validating naive bayes using Smoothing + Trigrams ---")
 NB=NaiveBayesText(smoothing=True,bigrams=False,trigrams=True,discard_closed_class=False)
-NB.crossValidate(corpus, "Q 5.0")
+NB.crossValidate(corpus, "Q 5.0", Q_id=Q_id)
 smoothed_and_bigram_preds=NB.predictions
 
-results.savePrint_noQ("\n")
-results.savePrint_noQ(Q_no)
-results.savePrint_noQ("Average of performances across folds:")
-results.savePrint_noQ(f"Accuracy across folds: {NB.getAccuracy():.3f}")
-results.savePrint_noQ(f"Std. Dev across folds: {NB.getStdDeviation():.3f}")
-
-print(f"Accuracy: {NB.getAccuracy():.2f}") 
-print(f"Std. Dev: {NB.getStdDeviation():.2f}")
 
 results.savePrint_noQ("\n \n")
 
-del Q_no
+del Q_no, Q_id
 
 
 
@@ -386,26 +355,19 @@ print("-------------- ** Classifying reviews using SVM 10-fold cross-eval [no PO
 
 
 Q_no = "Q 6.0"
+Q_id = "Q6.0_SVM_NoBigram_NoTrigram_NoPos"
 
 print_st = "--------- ** Cross-validating SVM using NoBigram + NoTrigram [no Pos] ** ---------"
 
 results.savePrint_noQ(print_st)
 SVM=SVMText(bigrams=False,trigrams=False,discard_closed_class=False)
-SVM.crossValidate(corpus, Q_no)
+SVM.crossValidate(corpus, Q_no, Q_id=Q_id)
 smoothed_and_bigram_preds=SVM.predictions
 
-results.savePrint_noQ("\n")
-results.savePrint_noQ(Q_no)
-results.savePrint_noQ("Average of performances across folds:")
-results.savePrint_noQ(f"Accuracy across folds: {SVM.getAccuracy():.3f}")
-results.savePrint_noQ(f"Std. Dev across folds: {SVM.getStdDeviation():.3f}")
-
-print(f"Accuracy: {SVM.getAccuracy():.2f}") 
-print(f"Std. Dev: {SVM.getStdDeviation():.2f}")
 
 results.savePrint_noQ("\n \n")
 
-del Q_no, print_st
+del Q_no, print_st, Q_id
 
 results.savePrint_noQ("\n")
 
@@ -417,25 +379,19 @@ corpus_withPos =MovieReviewCorpus(stemming=False,pos=True)
 
 
 Q_no = "Q 7.0"
+Q_id = "Q7.0_SVM_NoBigram_NoTrigram_WithPos"
+
 print_st = "--- Cross-validating SVM using NoBigram + NoTrigram [with POS] ---"
 results.savePrint_noQ(print_st)
 
 SVM=SVMText(bigrams=False,trigrams=False,discard_closed_class=False)
-SVM.crossValidate(corpus_withPos, Q_no)
+SVM.crossValidate(corpus_withPos, Q_no, Q_id)
 smoothed_and_bigram_preds=SVM.predictions
 
-results.savePrint_noQ("\n")
-results.savePrint_noQ(Q_no)
-results.savePrint_noQ("Average of performances across folds:")
-results.savePrint_noQ(f"Accuracy across folds: {SVM.getAccuracy():.3f}")
-results.savePrint_noQ(f"Std. Dev across folds: {SVM.getStdDeviation():.3f}")
-
-print(f"Accuracy: {SVM.getAccuracy():.2f}") 
-print(f"Std. Dev: {SVM.getStdDeviation():.2f}")
 
 results.savePrint_noQ("\n \n")
 
-del Q_no, print_st
+del Q_no, print_st, Q_id
 
 
 
@@ -443,25 +399,19 @@ print("----------- ** Training svm on word+pos features **-------------") # I'm 
 print("----------- ** Training svm discarding closed-class words **------------")
 
 Q_no = "Q 7.1"
+Q_id = "Q7.1_SVM_NoBigram_NoTrigram_WithPos_DiscardTrue"
+
 print_st = "--- Cross-validating SVM using NoBigram + NoTrigram [with POS][discard closed-class]---"
 results.savePrint_noQ(print_st)
 
 SVM=SVMText(bigrams=False,trigrams=False,discard_closed_class=True)
-SVM.crossValidate(corpus_withPos, Q_no)
+SVM.crossValidate(corpus_withPos, Q_no, Q_id=Q_id)
 smoothed_and_bigram_preds=SVM.predictions
 
-results.savePrint_noQ("\n")
-results.savePrint_noQ(Q_no)
-results.savePrint_noQ("Average of performances across folds:")
-results.savePrint_noQ(f"Accuracy across folds: {SVM.getAccuracy():.3f}")
-results.savePrint_noQ(f"Std. Dev across folds: {SVM.getStdDeviation():.3f}")
-
-print(f"Accuracy: {SVM.getAccuracy():.2f}") 
-print(f"Std. Dev: {SVM.getStdDeviation():.2f}")
 
 results.savePrint_noQ("\n \n")
 
-del Q_no, print_st
+del Q_no, print_st, Q_id
 
 
 

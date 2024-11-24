@@ -23,10 +23,12 @@ trainingResults.refreshResults()
 
 print(f"CPU available: {multiprocessing.cpu_count()}")
 
+
 workers = multiprocessing.cpu_count() - 2
 
 
 corpus=MovieReviewCorpus(stemming=False,pos=False)
+
 
 # Load labeled IMDB data for Doc2Vec training
 imdb_loader = IMDBLoader('data/aclImdb')
@@ -110,10 +112,10 @@ def load_model(save_dir, dm, vector_size, window, min_count, epochs):
 parameter_grid = {
 
     'dm' : [0, 1], 
-    'vector_size' : [50, 100],
-    'window' : [5, 10],
-    'min_count' : [2, 4], 
-    'epochs' : [3, 5]
+    'vector_size' : [50],
+    'window' : [5],
+    'min_count' : [4], 
+    'epochs' : [3]
 }
 
 model_dir = 'Doc2Vec_Models'
@@ -125,6 +127,8 @@ param_combinations = list(product(parameter_grid["dm"],
                                   parameter_grid["window"],
                                   parameter_grid["min_count"],
                                   parameter_grid["epochs"]))
+
+
 
 for dm, vector_size, window, min_count, epochs in param_combinations:
     model = train_and_save_model(
@@ -158,17 +162,6 @@ for dm, vector_size, window, min_count, epochs in param_combinations:
 
 
     SVM_d2v = SVM_Doc2Vec(doc2vec_model=doc2vec_model)
-    SVM_d2v.crossValidate(corpus, Q_no)
-
-    results.savePrint_noQ("\n")
-    results.savePrint_noQ("Average of performances across folds:")
-    results.savePrint_noQ(f"Accuracy across folds: {SVM_d2v.getAccuracy():.3f}")
-    results.savePrint_noQ(f"Std. Dev across folds: {SVM_d2v.getStdDeviation():.3f}")
-    results.space()
-    results.space()
-
-    # definitely need to save everything to csv so that I can do some kind of analysis !!!! 
-
-
+    SVM_d2v.crossValidate_Doc2Vec(corpus, modelID=model_id)
 
 
