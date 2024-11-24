@@ -27,25 +27,9 @@ workers = multiprocessing.cpu_count() - 2
 
 corpus=MovieReviewCorpus(stemming=False,pos=False)
 
-# Step 1: Load labeled IMDB data for Doc2Vec training
+# Load labeled IMDB data for Doc2Vec training
 imdb_loader = IMDBLoader('data/aclImdb')
 imdb_tagged_docs = imdb_loader.load_reviews()
-
-# # Step 2: Train Doc2Vec on IMDB labeled data
-# doc2vec_model = Doc2VecTrainer(vector_size=100, window=5, min_count = 2, epochs=5, workers = workers, dm = 1)
-# doc2vec_model.train(imdb_tagged_docs)
-
-# Q_no = "Q 8"
-
-# SVM_d2v = SVM_Doc2Vec(doc2vec_model=doc2vec_model)
-# SVM_d2v.crossValidate(corpus, Q_no)
-
-# results.savePrint_noQ("\n")
-# results.savePrint_noQ(Q_no)
-# results.savePrint_noQ("Average of performances across folds:")
-# results.savePrint_noQ(f"Accuracy across folds: {SVM_d2v.getAccuracy():.3f}")
-# results.savePrint_noQ(f"Std. Dev across folds: {SVM_d2v.getStdDeviation():.3f}")
-
 
 
 # ---------------- # 
@@ -65,7 +49,7 @@ def train_and_save_model(tagged_documents, save_dir, dm, vector_size, window, mi
     :param epochs: Number of training epochs
     """
     # Construct the model filename based on parameters
-    model_filename = f"doc2vec_dm{dm}_vec{vector_size}_win{window}_min{min_count}.model"
+    model_filename = f"doc2vec_dm{dm}_vec{vector_size}_win{window}_min{min_count}_epochs{epochs}.model"
     model_path = os.path.join(save_dir, model_filename)
 
     # Check if the model file already exists
@@ -97,7 +81,7 @@ def train_and_save_model(tagged_documents, save_dir, dm, vector_size, window, mi
     return model
 
 
-def load_model(save_dir, dm, vector_size, window, min_count):
+def load_model(save_dir, dm, vector_size, window, min_count, epochs):
     """
     Load a previously saved Doc2Vec model.
 
@@ -109,7 +93,7 @@ def load_model(save_dir, dm, vector_size, window, min_count):
     :return: Loaded Doc2Vec model
     """
 
-    model_id = f"doc2vec_dm{dm}_vec{vector_size}_win{window}_min{min_count}"
+    model_id = f"doc2vec_dm{dm}_vec{vector_size}_win{window}_min{min_count}_epochs{epochs}"
 
     model_filename = f"{model_id}.model"
     model_path = os.path.join(save_dir, model_filename)
@@ -155,23 +139,33 @@ for dm, vector_size, window, min_count, epochs in param_combinations:
 
 for dm, vector_size, window, min_count, epochs in param_combinations:
 
+
     model_id, doc2vec_model = load_model(
         save_dir=model_dir, 
         dm = dm, 
         vector_size=vector_size, 
         window=window, 
-        min_count = min_count
+        min_count = min_count, 
+        epochs = epochs
     )
 
+
     Q_no = f'Q 8: ModelID: {model_id}'
+
+    results.savePrint_noQ(f'----------- ** {Q_no} ** ----------------')
+
+
 
     SVM_d2v = SVM_Doc2Vec(doc2vec_model=doc2vec_model)
     SVM_d2v.crossValidate(corpus, Q_no)
 
     results.savePrint_noQ("\n")
-    results.savePrint_noQ(Q_no)
     results.savePrint_noQ("Average of performances across folds:")
     results.savePrint_noQ(f"Accuracy across folds: {SVM_d2v.getAccuracy():.3f}")
     results.savePrint_noQ(f"Std. Dev across folds: {SVM_d2v.getStdDeviation():.3f}")
+    results.space()
+    results.space()
+
+
 
 

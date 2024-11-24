@@ -78,4 +78,9 @@ class resultsWrite():
             file.write(f'{print_st} \n')
 
 
+    def space(self):
+        with open(self.filename, 'a') as file:
+            file.write(f'\n')
+
+
 
