@@ -251,8 +251,33 @@ class SVMText(Evaluation):
         @type reviews: list of (string, list) tuples corresponding to (label, content)
         """
 
+        self.extractVocabulary(reviews)
+
+        # Each key is a word from self.vocabulary (the set of all unique words) in our vocab list
+        # Each value is the index (int)
+
+        vocab_to_id = {word: idx for idx, word in enumerate(self.vocabulary)}
+
+        # Prepare input features and labels
         self.input_features = []
         self.labels = []
+
+        for sentiment, review in reviews:
+
+            # Initalise a BoW vector of the same size as vocabulary
+
+            bow_vector = [0] * len(self.vocabulary)
+
+            # Count occurences of each word in the review
+
+            for token in self.extractReviewTokens(review):
+                if token in vocab_to_id:
+                    bow_vector[vocab_to_id[token]] += 1
+
+            
+            self.input_features.append(bow_vector)
+
+            self.labels.append(1 if sentiment == "POS" else -1)
 
         # TODO Q6.
 
@@ -278,6 +303,32 @@ class SVMText(Evaluation):
         @param reviews: test data
         @type reviews: list of (string, list) tuples corresponding to (label, content)
         """
+
+        vocab_to_id = {word: indx for indx, word in enumerate(self.vocabulary)}
+
+        test_features = []
+
+        for _, review in reviews:
+
+            bow_vector = [0] *len(self.vocabulary)
+
+            # Count occurences of each word in the review
+
+            for token in self.extractReviewTokens(review):
+                if token in vocab_to_id:
+                    bow_vector[vocab_to_id[token]] += 1
+            
+            test_features.append(bow_vector)
+
+        
+
+        predictions = self.svm_classifier.predict(test_features)
+        true_labels = [1 if sentiment == "POS" else -1 for sentiment, _ in reviews]
+
+
+        for pred, true in zip(predictions, true_labels):
+            self.predictions.append("+" if pred == true else "-")
+
 
         # TODO Q6.1
 

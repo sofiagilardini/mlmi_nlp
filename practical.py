@@ -251,7 +251,7 @@ results.savePrint_noQ("\n \n")
 results.savePrint_noQ(f"--------------- ** NB: Cross-Validation with Smoothing and Bigrams ** ----------------")
 
 
-Q_no = "Q 5.0 part_a"
+Q_no = "Q 5.0 part_a (Smoothing + Bigrams)"
 print("--- cross-validating naive bayes using Smoothing + Bigrams ---")
 NB=NaiveBayesText(smoothing=True,bigrams=True,trigrams=False,discard_closed_class=False)
 NB.crossValidate(corpus, "Q 5.0")
@@ -276,7 +276,7 @@ results.savePrint_noQ("\n")
 
 # see if bigrams significantly improves results on smoothed NB only
 
-Q_no = "Q 5.0 part_b"
+Q_no = "Q 5.0 part_b (Smoothing + Bigrams)"
 results.savePrint_noQ("\n")
 results.savePrint_noQ(Q_no)
 
@@ -319,7 +319,7 @@ results.savePrint_noQ("\n \n")
 results.savePrint_noQ(f"--------------- ** NB: Cross-Validation with Smoothing and Trigrams ** ----------------")
 
 
-Q_no = "Q 5.0 part_a"
+Q_no = "Q 5.0 part_a (Smoothing + Trigrams)"
 print("--- Cross-validating naive bayes using Smoothing + Trigrams ---")
 NB=NaiveBayesText(smoothing=True,bigrams=False,trigrams=True,discard_closed_class=False)
 NB.crossValidate(corpus, "Q 5.0")
@@ -338,13 +338,12 @@ results.savePrint_noQ("\n \n")
 
 del Q_no
 
-results.savePrint_noQ("\n")
 
 
 
 # see if bigrams significantly improves results on smoothed NB only
 
-Q_no = "Q 5.0 part_b"
+Q_no = "Q 5.0 part_b (Smoothing + Trigrams)"
 results.savePrint_noQ("\n")
 results.savePrint_noQ(Q_no)
 
@@ -378,16 +377,91 @@ results.savePrint_noQ(f"-> Number of features from Q3: {num_non_stemmed_features
 del Q_no
 
 
+results.savePrint_noQ("\n \n")
 
 
 
 # TODO Q6 and 6.1
-print("-------------- ** Classifying reviews using SVM 10-fold cross-eval **-------------")
+print("-------------- ** Classifying reviews using SVM 10-fold cross-eval no POS info **-------------")
+
+
+Q_no = "Q 6.0"
+
+print_st = "--- Cross-validating SVM using NoBigram + NoTrigram [no Pos] ---"
+
+print(print_st)
+SVM=SVMText(bigrams=False,trigrams=False,discard_closed_class=False)
+SVM.crossValidate(corpus, Q_no)
+smoothed_and_bigram_preds=SVM.predictions
+
+results.savePrint_noQ("\n")
+results.savePrint_noQ(Q_no)
+results.savePrint_noQ("Average of performances across folds:")
+results.savePrint_noQ(f"Accuracy across folds: {SVM.getAccuracy():.3f}")
+results.savePrint_noQ(f"Std. Dev across folds: {SVM.getStdDeviation():.3f}")
+
+print(f"Accuracy: {SVM.getAccuracy():.2f}") 
+print(f"Std. Dev: {SVM.getStdDeviation():.2f}")
+
+results.savePrint_noQ("\n \n")
+
+del Q_no, print_st
+
+results.savePrint_noQ("\n")
+
 
 # TODO Q7
 print("----------- ** Adding in POS information to corpus **------------")
-print("----------- ** Training svm on word+pos features **-------------")
+
+corpus_withPos =MovieReviewCorpus(stemming=False,pos=True)
+
+
+Q_no = "Q 7.0"
+print_st = "--- Cross-validating SVM using NoBigram + NoTrigram [with POS] ---"
+results.savePrint_noQ(print_st)
+
+SVM=SVMText(bigrams=False,trigrams=False,discard_closed_class=False)
+SVM.crossValidate(corpus_withPos, Q_no)
+smoothed_and_bigram_preds=SVM.predictions
+
+results.savePrint_noQ("\n")
+results.savePrint_noQ(Q_no)
+results.savePrint_noQ("Average of performances across folds:")
+results.savePrint_noQ(f"Accuracy across folds: {SVM.getAccuracy():.3f}")
+results.savePrint_noQ(f"Std. Dev across folds: {SVM.getStdDeviation():.3f}")
+
+print(f"Accuracy: {SVM.getAccuracy():.2f}") 
+print(f"Std. Dev: {SVM.getStdDeviation():.2f}")
+
+results.savePrint_noQ("\n \n")
+
+del Q_no, print_st
+
+
+
+print("----------- ** Training svm on word+pos features **-------------") # I'm confused isn't this just the same?
 print("----------- ** Training svm discarding closed-class words **------------")
+
+Q_no = "Q 7.1"
+print_st = "--- Cross-validating SVM using NoBigram + NoTrigram [with POS][discard closed-class]---"
+results.savePrint_noQ(print_st)
+
+SVM=SVMText(bigrams=False,trigrams=False,discard_closed_class=True)
+SVM.crossValidate(corpus_withPos, Q_no)
+smoothed_and_bigram_preds=SVM.predictions
+
+results.savePrint_noQ("\n")
+results.savePrint_noQ(Q_no)
+results.savePrint_noQ("Average of performances across folds:")
+results.savePrint_noQ(f"Accuracy across folds: {SVM.getAccuracy():.3f}")
+results.savePrint_noQ(f"Std. Dev across folds: {SVM.getStdDeviation():.3f}")
+
+print(f"Accuracy: {SVM.getAccuracy():.2f}") 
+print(f"Std. Dev: {SVM.getStdDeviation():.2f}")
+
+results.savePrint_noQ("\n \n")
+
+del Q_no, print_st
 
 # question 8.0
 print("----------- ** Using document embeddings **------------")
