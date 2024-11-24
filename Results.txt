@@ -358,3 +358,38 @@ Std. Dev across folds: 0.023
 
  
  
+Q 8 
+Test fold: 0; 
+ Accuracy: 0.785000 
+ Std. Dev: 0.059372 
+Test fold: 1; 
+ Accuracy: 0.825000 
+ Std. Dev: 0.138293 
+Test fold: 2; 
+ Accuracy: 0.840000 
+ Std. Dev: 0.083066 
+Q 8 
+Test fold: 0; 
+ Accuracy: 0.800000 
+ Std. Dev: 0.067082 
+Test fold: 1; 
+ Accuracy: 0.840000 
+ Std. Dev: 0.113578 
+Test fold: 2; 
+ Accuracy: 0.825000 
+ Std. Dev: 0.071589 
+Test fold: 3; 
+ Accuracy: 0.830000 
+ Std. Dev: 0.074833 
+Test fold: 4; 
+ Accuracy: 0.830000 
+ Std. Dev: 0.097980 
+Test fold: 5; 
+ Accuracy: 0.840000 
+ Std. Dev: 0.053852 
+Test fold: 6; 
+ Accuracy: 0.875000 
+ Std. Dev: 0.060208 
+Test fold: 7; 
+ Accuracy: 0.835000 
+ Std. Dev: 0.077621 

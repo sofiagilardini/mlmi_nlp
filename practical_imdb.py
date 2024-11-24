@@ -18,6 +18,7 @@ results = resultsWrite("IMDB_Results.txt")
 results.refreshResults()
 
 trainingResults = resultsWrite("Doc2VecTrain.txt")
+trainingResults.refreshResults()
 
 
 print(f"CPU available: {multiprocessing.cpu_count()}")
@@ -165,6 +166,8 @@ for dm, vector_size, window, min_count, epochs in param_combinations:
     results.savePrint_noQ(f"Std. Dev across folds: {SVM_d2v.getStdDeviation():.3f}")
     results.space()
     results.space()
+
+    # definitely need to save everything to csv so that I can do some kind of analysis !!!! 
 
 
 

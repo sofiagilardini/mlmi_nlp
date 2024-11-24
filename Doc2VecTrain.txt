@@ -1,0 +1,105 @@
+Training model: doc2vec_dm0_vec100_win5_min4_epochs5.model... 
+Finished training model: doc2vec_dm0_vec100_win5_min4_epochs5.model: took 15.569645881652832 seconds 
+Model saved: Doc2Vec_Models/doc2vec_dm0_vec100_win5_min4_epochs5.model 
+
+ 
+Training model: doc2vec_dm0_vec100_win10_min2_epochs3.model... 
+Finished training model: doc2vec_dm0_vec100_win10_min2_epochs3.model: took 11.685221910476685 seconds 
+Model saved: Doc2Vec_Models/doc2vec_dm0_vec100_win10_min2_epochs3.model 
+
+ 
+Training model: doc2vec_dm0_vec100_win10_min2_epochs5.model... 
+Finished training model: doc2vec_dm0_vec100_win10_min2_epochs5.model: took 19.600688457489014 seconds 
+Model saved: Doc2Vec_Models/doc2vec_dm0_vec100_win10_min2_epochs5.model 
+
+ 
+Training model: doc2vec_dm0_vec100_win10_min4_epochs3.model... 
+Finished training model: doc2vec_dm0_vec100_win10_min4_epochs3.model: took 11.53201937675476 seconds 
+Model saved: Doc2Vec_Models/doc2vec_dm0_vec100_win10_min4_epochs3.model 
+
+ 
+Training model: doc2vec_dm0_vec100_win10_min4_epochs5.model... 
+Finished training model: doc2vec_dm0_vec100_win10_min4_epochs5.model: took 16.683585166931152 seconds 
+Model saved: Doc2Vec_Models/doc2vec_dm0_vec100_win10_min4_epochs5.model 
+
+ 
+Training model: doc2vec_dm1_vec50_win5_min2_epochs3.model... 
+Finished training model: doc2vec_dm1_vec50_win5_min2_epochs3.model: took 15.47934603691101 seconds 
+Model saved: Doc2Vec_Models/doc2vec_dm1_vec50_win5_min2_epochs3.model 
+
+ 
+Training model: doc2vec_dm1_vec50_win5_min2_epochs5.model... 
+Finished training model: doc2vec_dm1_vec50_win5_min2_epochs5.model: took 24.16022777557373 seconds 
+Model saved: Doc2Vec_Models/doc2vec_dm1_vec50_win5_min2_epochs5.model 
+
+ 
+Training model: doc2vec_dm1_vec50_win5_min4_epochs3.model... 
+Finished training model: doc2vec_dm1_vec50_win5_min4_epochs3.model: took 14.88933253288269 seconds 
+Model saved: Doc2Vec_Models/doc2vec_dm1_vec50_win5_min4_epochs3.model 
+
+ 
+Training model: doc2vec_dm1_vec50_win5_min4_epochs5.model... 
+Finished training model: doc2vec_dm1_vec50_win5_min4_epochs5.model: took 21.57615303993225 seconds 
+Model saved: Doc2Vec_Models/doc2vec_dm1_vec50_win5_min4_epochs5.model 
+
+ 
+Training model: doc2vec_dm1_vec50_win10_min2_epochs3.model... 
+Finished training model: doc2vec_dm1_vec50_win10_min2_epochs3.model: took 15.206666469573975 seconds 
+Model saved: Doc2Vec_Models/doc2vec_dm1_vec50_win10_min2_epochs3.model 
+
+ 
+Training model: doc2vec_dm1_vec50_win10_min2_epochs5.model... 
+Finished training model: doc2vec_dm1_vec50_win10_min2_epochs5.model: took 23.318639039993286 seconds 
+Model saved: Doc2Vec_Models/doc2vec_dm1_vec50_win10_min2_epochs5.model 
+
+ 
+Training model: doc2vec_dm1_vec50_win10_min4_epochs3.model... 
+Finished training model: doc2vec_dm1_vec50_win10_min4_epochs3.model: took 13.860142946243286 seconds 
+Model saved: Doc2Vec_Models/doc2vec_dm1_vec50_win10_min4_epochs3.model 
+
+ 
+Training model: doc2vec_dm1_vec50_win10_min4_epochs5.model... 
+Finished training model: doc2vec_dm1_vec50_win10_min4_epochs5.model: took 21.533880949020386 seconds 
+Model saved: Doc2Vec_Models/doc2vec_dm1_vec50_win10_min4_epochs5.model 
+
+ 
+Training model: doc2vec_dm1_vec100_win5_min2_epochs3.model... 
+Finished training model: doc2vec_dm1_vec100_win5_min2_epochs3.model: took 16.513437271118164 seconds 
+Model saved: Doc2Vec_Models/doc2vec_dm1_vec100_win5_min2_epochs3.model 
+
+ 
+Training model: doc2vec_dm1_vec100_win5_min2_epochs5.model... 
+Finished training model: doc2vec_dm1_vec100_win5_min2_epochs5.model: took 25.389049530029297 seconds 
+Model saved: Doc2Vec_Models/doc2vec_dm1_vec100_win5_min2_epochs5.model 
+
+ 
+Training model: doc2vec_dm1_vec100_win5_min4_epochs3.model... 
+Finished training model: doc2vec_dm1_vec100_win5_min4_epochs3.model: took 14.918254613876343 seconds 
+Model saved: Doc2Vec_Models/doc2vec_dm1_vec100_win5_min4_epochs3.model 
+
+ 
+Training model: doc2vec_dm1_vec100_win5_min4_epochs5.model... 
+Finished training model: doc2vec_dm1_vec100_win5_min4_epochs5.model: took 22.812267780303955 seconds 
+Model saved: Doc2Vec_Models/doc2vec_dm1_vec100_win5_min4_epochs5.model 
+
+ 
+Training model: doc2vec_dm1_vec100_win10_min2_epochs3.model... 
+Finished training model: doc2vec_dm1_vec100_win10_min2_epochs3.model: took 16.557781219482422 seconds 
+Model saved: Doc2Vec_Models/doc2vec_dm1_vec100_win10_min2_epochs3.model 
+
+ 
+Training model: doc2vec_dm1_vec100_win10_min2_epochs5.model... 
+Finished training model: doc2vec_dm1_vec100_win10_min2_epochs5.model: took 24.843539714813232 seconds 
+Model saved: Doc2Vec_Models/doc2vec_dm1_vec100_win10_min2_epochs5.model 
+
+ 
+Training model: doc2vec_dm1_vec100_win10_min4_epochs3.model... 
+Finished training model: doc2vec_dm1_vec100_win10_min4_epochs3.model: took 14.285410642623901 seconds 
+Model saved: Doc2Vec_Models/doc2vec_dm1_vec100_win10_min4_epochs3.model 
+
+ 
+Training model: doc2vec_dm1_vec100_win10_min4_epochs5.model... 
+Finished training model: doc2vec_dm1_vec100_win10_min4_epochs5.model: took 22.527337551116943 seconds 
+Model saved: Doc2Vec_Models/doc2vec_dm1_vec100_win10_min4_epochs5.model 
+
+ 

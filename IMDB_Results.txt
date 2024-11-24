@@ -1,0 +1,1248 @@
+----------- ** Q 8: ModelID: doc2vec_dm0_vec50_win5_min2_epochs3 ** ---------------- 
+Q 8: ModelID: doc2vec_dm0_vec50_win5_min2_epochs3 
+Test fold: 0; 
+ Accuracy: 0.790000 
+ Std. Dev: 0.096954 
+Test fold: 1; 
+ Accuracy: 0.760000 
+ Std. Dev: 0.083066 
+Test fold: 2; 
+ Accuracy: 0.730000 
+ Std. Dev: 0.090000 
+Test fold: 3; 
+ Accuracy: 0.770000 
+ Std. Dev: 0.081240 
+Test fold: 4; 
+ Accuracy: 0.740000 
+ Std. Dev: 0.131909 
+Test fold: 5; 
+ Accuracy: 0.725000 
+ Std. Dev: 0.110114 
+Test fold: 6; 
+ Accuracy: 0.790000 
+ Std. Dev: 0.073485 
+Test fold: 7; 
+ Accuracy: 0.675000 
+ Std. Dev: 0.136473 
+Test fold: 8; 
+ Accuracy: 0.725000 
+ Std. Dev: 0.064226 
+Test fold: 9; 
+ Accuracy: 0.790000 
+ Std. Dev: 0.091652 
+
+ 
+Average of performances across folds: 
+Accuracy across folds: 0.790 
+Std. Dev across folds: 0.092 
+
+
+----------- ** Q 8: ModelID: doc2vec_dm0_vec50_win5_min2_epochs5 ** ---------------- 
+Q 8: ModelID: doc2vec_dm0_vec50_win5_min2_epochs5 
+Test fold: 0; 
+ Accuracy: 0.790000 
+ Std. Dev: 0.070000 
+Test fold: 1; 
+ Accuracy: 0.785000 
+ Std. Dev: 0.116297 
+Test fold: 2; 
+ Accuracy: 0.785000 
+ Std. Dev: 0.067268 
+Test fold: 3; 
+ Accuracy: 0.750000 
+ Std. Dev: 0.092195 
+Test fold: 4; 
+ Accuracy: 0.795000 
+ Std. Dev: 0.047170 
+Test fold: 5; 
+ Accuracy: 0.775000 
+ Std. Dev: 0.081394 
+Test fold: 6; 
+ Accuracy: 0.805000 
+ Std. Dev: 0.110567 
+Test fold: 7; 
+ Accuracy: 0.735000 
+ Std. Dev: 0.070887 
+Test fold: 8; 
+ Accuracy: 0.770000 
+ Std. Dev: 0.074833 
+Test fold: 9; 
+ Accuracy: 0.815000 
+ Std. Dev: 0.092331 
+
+ 
+Average of performances across folds: 
+Accuracy across folds: 0.815 
+Std. Dev across folds: 0.092 
+
+
+----------- ** Q 8: ModelID: doc2vec_dm0_vec50_win5_min4_epochs3 ** ---------------- 
+Q 8: ModelID: doc2vec_dm0_vec50_win5_min4_epochs3 
+Test fold: 0; 
+ Accuracy: 0.760000 
+ Std. Dev: 0.076811 
+Test fold: 1; 
+ Accuracy: 0.775000 
+ Std. Dev: 0.100623 
+Test fold: 2; 
+ Accuracy: 0.750000 
+ Std. Dev: 0.100000 
+Test fold: 3; 
+ Accuracy: 0.750000 
+ Std. Dev: 0.100000 
+Test fold: 4; 
+ Accuracy: 0.745000 
+ Std. Dev: 0.123390 
+Test fold: 5; 
+ Accuracy: 0.765000 
+ Std. Dev: 0.086747 
+Test fold: 6; 
+ Accuracy: 0.775000 
+ Std. Dev: 0.064226 
+Test fold: 7; 
+ Accuracy: 0.650000 
+ Std. Dev: 0.114018 
+Test fold: 8; 
+ Accuracy: 0.760000 
+ Std. Dev: 0.062450 
+Test fold: 9; 
+ Accuracy: 0.790000 
+ Std. Dev: 0.091652 
+
+ 
+Average of performances across folds: 
+Accuracy across folds: 0.790 
+Std. Dev across folds: 0.092 
+
+
+----------- ** Q 8: ModelID: doc2vec_dm0_vec50_win5_min4_epochs5 ** ---------------- 
+Q 8: ModelID: doc2vec_dm0_vec50_win5_min4_epochs5 
+Test fold: 0; 
+ Accuracy: 0.800000 
+ Std. Dev: 0.089443 
+Test fold: 1; 
+ Accuracy: 0.820000 
+ Std. Dev: 0.087178 
+Test fold: 2; 
+ Accuracy: 0.810000 
+ Std. Dev: 0.086023 
+Test fold: 3; 
+ Accuracy: 0.800000 
+ Std. Dev: 0.100000 
+Test fold: 4; 
+ Accuracy: 0.765000 
+ Std. Dev: 0.097596 
+Test fold: 5; 
+ Accuracy: 0.750000 
+ Std. Dev: 0.067082 
+Test fold: 6; 
+ Accuracy: 0.800000 
+ Std. Dev: 0.094868 
+Test fold: 7; 
+ Accuracy: 0.740000 
+ Std. Dev: 0.115758 
+Test fold: 8; 
+ Accuracy: 0.770000 
+ Std. Dev: 0.040000 
+Test fold: 9; 
+ Accuracy: 0.820000 
+ Std. Dev: 0.078102 
+
+ 
+Average of performances across folds: 
+Accuracy across folds: 0.820 
+Std. Dev across folds: 0.078 
+
+
+----------- ** Q 8: ModelID: doc2vec_dm0_vec50_win10_min2_epochs3 ** ---------------- 
+Q 8: ModelID: doc2vec_dm0_vec50_win10_min2_epochs3 
+Test fold: 0; 
+ Accuracy: 0.775000 
+ Std. Dev: 0.116726 
+Test fold: 1; 
+ Accuracy: 0.750000 
+ Std. Dev: 0.080623 
+Test fold: 2; 
+ Accuracy: 0.735000 
+ Std. Dev: 0.063443 
+Test fold: 3; 
+ Accuracy: 0.735000 
+ Std. Dev: 0.109659 
+Test fold: 4; 
+ Accuracy: 0.705000 
+ Std. Dev: 0.140446 
+Test fold: 5; 
+ Accuracy: 0.730000 
+ Std. Dev: 0.105357 
+Test fold: 6; 
+ Accuracy: 0.785000 
+ Std. Dev: 0.070887 
+Test fold: 7; 
+ Accuracy: 0.670000 
+ Std. Dev: 0.126886 
+Test fold: 8; 
+ Accuracy: 0.735000 
+ Std. Dev: 0.059372 
+Test fold: 9; 
+ Accuracy: 0.805000 
+ Std. Dev: 0.082006 
+
+ 
+Average of performances across folds: 
+Accuracy across folds: 0.805 
+Std. Dev across folds: 0.082 
+
+
+----------- ** Q 8: ModelID: doc2vec_dm0_vec50_win10_min2_epochs5 ** ---------------- 
+Q 8: ModelID: doc2vec_dm0_vec50_win10_min2_epochs5 
+Test fold: 0; 
+ Accuracy: 0.780000 
+ Std. Dev: 0.090000 
+Test fold: 1; 
+ Accuracy: 0.765000 
+ Std. Dev: 0.116297 
+Test fold: 2; 
+ Accuracy: 0.775000 
+ Std. Dev: 0.100623 
+Test fold: 3; 
+ Accuracy: 0.790000 
+ Std. Dev: 0.043589 
+Test fold: 4; 
+ Accuracy: 0.780000 
+ Std. Dev: 0.084261 
+Test fold: 5; 
+ Accuracy: 0.755000 
+ Std. Dev: 0.082006 
+Test fold: 6; 
+ Accuracy: 0.790000 
+ Std. Dev: 0.088882 
+Test fold: 7; 
+ Accuracy: 0.725000 
+ Std. Dev: 0.087321 
+Test fold: 8; 
+ Accuracy: 0.755000 
+ Std. Dev: 0.061033 
+Test fold: 9; 
+ Accuracy: 0.810000 
+ Std. Dev: 0.094340 
+
+ 
+Average of performances across folds: 
+Accuracy across folds: 0.810 
+Std. Dev across folds: 0.094 
+
+
+----------- ** Q 8: ModelID: doc2vec_dm0_vec50_win10_min4_epochs3 ** ---------------- 
+Q 8: ModelID: doc2vec_dm0_vec50_win10_min4_epochs3 
+Test fold: 0; 
+ Accuracy: 0.750000 
+ Std. Dev: 0.083666 
+Test fold: 1; 
+ Accuracy: 0.740000 
+ Std. Dev: 0.104403 
+Test fold: 2; 
+ Accuracy: 0.730000 
+ Std. Dev: 0.128841 
+Test fold: 3; 
+ Accuracy: 0.750000 
+ Std. Dev: 0.097468 
+Test fold: 4; 
+ Accuracy: 0.750000 
+ Std. Dev: 0.107238 
+Test fold: 5; 
+ Accuracy: 0.740000 
+ Std. Dev: 0.083066 
+Test fold: 6; 
+ Accuracy: 0.790000 
+ Std. Dev: 0.086023 
+Test fold: 7; 
+ Accuracy: 0.690000 
+ Std. Dev: 0.124097 
+Test fold: 8; 
+ Accuracy: 0.770000 
+ Std. Dev: 0.095394 
+Test fold: 9; 
+ Accuracy: 0.745000 
+ Std. Dev: 0.108282 
+
+ 
+Average of performances across folds: 
+Accuracy across folds: 0.745 
+Std. Dev across folds: 0.108 
+
+
+----------- ** Q 8: ModelID: doc2vec_dm0_vec50_win10_min4_epochs5 ** ---------------- 
+Q 8: ModelID: doc2vec_dm0_vec50_win10_min4_epochs5 
+Test fold: 0; 
+ Accuracy: 0.780000 
+ Std. Dev: 0.071414 
+Test fold: 1; 
+ Accuracy: 0.825000 
+ Std. Dev: 0.098107 
+Test fold: 2; 
+ Accuracy: 0.815000 
+ Std. Dev: 0.102591 
+Test fold: 3; 
+ Accuracy: 0.800000 
+ Std. Dev: 0.089443 
+Test fold: 4; 
+ Accuracy: 0.775000 
+ Std. Dev: 0.071589 
+Test fold: 5; 
+ Accuracy: 0.755000 
+ Std. Dev: 0.096047 
+Test fold: 6; 
+ Accuracy: 0.795000 
+ Std. Dev: 0.093408 
+Test fold: 7; 
+ Accuracy: 0.730000 
+ Std. Dev: 0.110000 
+Test fold: 8; 
+ Accuracy: 0.755000 
+ Std. Dev: 0.090692 
+Test fold: 9; 
+ Accuracy: 0.780000 
+ Std. Dev: 0.138203 
+
+ 
+Average of performances across folds: 
+Accuracy across folds: 0.780 
+Std. Dev across folds: 0.138 
+
+
+----------- ** Q 8: ModelID: doc2vec_dm0_vec100_win5_min2_epochs3 ** ---------------- 
+Q 8: ModelID: doc2vec_dm0_vec100_win5_min2_epochs3 
+Test fold: 0; 
+ Accuracy: 0.760000 
+ Std. Dev: 0.088882 
+Test fold: 1; 
+ Accuracy: 0.735000 
+ Std. Dev: 0.102591 
+Test fold: 2; 
+ Accuracy: 0.745000 
+ Std. Dev: 0.105948 
+Test fold: 3; 
+ Accuracy: 0.755000 
+ Std. Dev: 0.112805 
+Test fold: 4; 
+ Accuracy: 0.715000 
+ Std. Dev: 0.146714 
+Test fold: 5; 
+ Accuracy: 0.720000 
+ Std. Dev: 0.090000 
+Test fold: 6; 
+ Accuracy: 0.805000 
+ Std. Dev: 0.085000 
+Test fold: 7; 
+ Accuracy: 0.680000 
+ Std. Dev: 0.124900 
+Test fold: 8; 
+ Accuracy: 0.700000 
+ Std. Dev: 0.074162 
+Test fold: 9; 
+ Accuracy: 0.765000 
+ Std. Dev: 0.092331 
+
+ 
+Average of performances across folds: 
+Accuracy across folds: 0.765 
+Std. Dev across folds: 0.092 
+
+
+----------- ** Q 8: ModelID: doc2vec_dm0_vec100_win5_min2_epochs5 ** ---------------- 
+Q 8: ModelID: doc2vec_dm0_vec100_win5_min2_epochs5 
+Test fold: 0; 
+ Accuracy: 0.775000 
+ Std. Dev: 0.081394 
+Test fold: 1; 
+ Accuracy: 0.830000 
+ Std. Dev: 0.100499 
+Test fold: 2; 
+ Accuracy: 0.810000 
+ Std. Dev: 0.086023 
+Test fold: 3; 
+ Accuracy: 0.770000 
+ Std. Dev: 0.092736 
+Test fold: 4; 
+ Accuracy: 0.775000 
+ Std. Dev: 0.051235 
+Test fold: 5; 
+ Accuracy: 0.805000 
+ Std. Dev: 0.090692 
+Test fold: 6; 
+ Accuracy: 0.820000 
+ Std. Dev: 0.097980 
+Test fold: 7; 
+ Accuracy: 0.740000 
+ Std. Dev: 0.070000 
+Test fold: 8; 
+ Accuracy: 0.780000 
+ Std. Dev: 0.084261 
+Test fold: 9; 
+ Accuracy: 0.850000 
+ Std. Dev: 0.094868 
+
+ 
+Average of performances across folds: 
+Accuracy across folds: 0.850 
+Std. Dev across folds: 0.095 
+
+
+----------- ** Q 8: ModelID: doc2vec_dm0_vec100_win5_min4_epochs3 ** ---------------- 
+Q 8: ModelID: doc2vec_dm0_vec100_win5_min4_epochs3 
+Test fold: 0; 
+ Accuracy: 0.760000 
+ Std. Dev: 0.076811 
+Test fold: 1; 
+ Accuracy: 0.725000 
+ Std. Dev: 0.112361 
+Test fold: 2; 
+ Accuracy: 0.755000 
+ Std. Dev: 0.115000 
+Test fold: 3; 
+ Accuracy: 0.735000 
+ Std. Dev: 0.097596 
+Test fold: 4; 
+ Accuracy: 0.730000 
+ Std. Dev: 0.155242 
+Test fold: 5; 
+ Accuracy: 0.745000 
+ Std. Dev: 0.061033 
+Test fold: 6; 
+ Accuracy: 0.770000 
+ Std. Dev: 0.045826 
+Test fold: 7; 
+ Accuracy: 0.665000 
+ Std. Dev: 0.118427 
+Test fold: 8; 
+ Accuracy: 0.760000 
+ Std. Dev: 0.053852 
+Test fold: 9; 
+ Accuracy: 0.770000 
+ Std. Dev: 0.116619 
+
+ 
+Average of performances across folds: 
+Accuracy across folds: 0.770 
+Std. Dev across folds: 0.117 
+
+
+----------- ** Q 8: ModelID: doc2vec_dm0_vec100_win5_min4_epochs5 ** ---------------- 
+Q 8: ModelID: doc2vec_dm0_vec100_win5_min4_epochs5 
+Test fold: 0; 
+ Accuracy: 0.780000 
+ Std. Dev: 0.074833 
+Test fold: 1; 
+ Accuracy: 0.805000 
+ Std. Dev: 0.103562 
+Test fold: 2; 
+ Accuracy: 0.825000 
+ Std. Dev: 0.068007 
+Test fold: 3; 
+ Accuracy: 0.815000 
+ Std. Dev: 0.089582 
+Test fold: 4; 
+ Accuracy: 0.780000 
+ Std. Dev: 0.092736 
+Test fold: 5; 
+ Accuracy: 0.765000 
+ Std. Dev: 0.102591 
+Test fold: 6; 
+ Accuracy: 0.780000 
+ Std. Dev: 0.092736 
+Test fold: 7; 
+ Accuracy: 0.770000 
+ Std. Dev: 0.078102 
+Test fold: 8; 
+ Accuracy: 0.795000 
+ Std. Dev: 0.093408 
+Test fold: 9; 
+ Accuracy: 0.835000 
+ Std. Dev: 0.092331 
+
+ 
+Average of performances across folds: 
+Accuracy across folds: 0.835 
+Std. Dev across folds: 0.092 
+
+
+----------- ** Q 8: ModelID: doc2vec_dm0_vec100_win10_min2_epochs3 ** ---------------- 
+Q 8: ModelID: doc2vec_dm0_vec100_win10_min2_epochs3 
+Test fold: 0; 
+ Accuracy: 0.795000 
+ Std. Dev: 0.082006 
+Test fold: 1; 
+ Accuracy: 0.775000 
+ Std. Dev: 0.100623 
+Test fold: 2; 
+ Accuracy: 0.760000 
+ Std. Dev: 0.083066 
+Test fold: 3; 
+ Accuracy: 0.765000 
+ Std. Dev: 0.107355 
+Test fold: 4; 
+ Accuracy: 0.720000 
+ Std. Dev: 0.145258 
+Test fold: 5; 
+ Accuracy: 0.760000 
+ Std. Dev: 0.073485 
+Test fold: 6; 
+ Accuracy: 0.780000 
+ Std. Dev: 0.071414 
+Test fold: 7; 
+ Accuracy: 0.675000 
+ Std. Dev: 0.126984 
+Test fold: 8; 
+ Accuracy: 0.730000 
+ Std. Dev: 0.064031 
+Test fold: 9; 
+ Accuracy: 0.790000 
+ Std. Dev: 0.070000 
+
+ 
+Average of performances across folds: 
+Accuracy across folds: 0.790 
+Std. Dev across folds: 0.070 
+
+
+----------- ** Q 8: ModelID: doc2vec_dm0_vec100_win10_min2_epochs5 ** ---------------- 
+Q 8: ModelID: doc2vec_dm0_vec100_win10_min2_epochs5 
+Test fold: 0; 
+ Accuracy: 0.770000 
+ Std. Dev: 0.064031 
+Test fold: 1; 
+ Accuracy: 0.805000 
+ Std. Dev: 0.112805 
+Test fold: 2; 
+ Accuracy: 0.820000 
+ Std. Dev: 0.074833 
+Test fold: 3; 
+ Accuracy: 0.785000 
+ Std. Dev: 0.070887 
+Test fold: 4; 
+ Accuracy: 0.775000 
+ Std. Dev: 0.084410 
+Test fold: 5; 
+ Accuracy: 0.815000 
+ Std. Dev: 0.077621 
+Test fold: 6; 
+ Accuracy: 0.805000 
+ Std. Dev: 0.101119 
+Test fold: 7; 
+ Accuracy: 0.765000 
+ Std. Dev: 0.074330 
+Test fold: 8; 
+ Accuracy: 0.770000 
+ Std. Dev: 0.055678 
+Test fold: 9; 
+ Accuracy: 0.825000 
+ Std. Dev: 0.090139 
+
+ 
+Average of performances across folds: 
+Accuracy across folds: 0.825 
+Std. Dev across folds: 0.090 
+
+
+----------- ** Q 8: ModelID: doc2vec_dm0_vec100_win10_min4_epochs3 ** ---------------- 
+Q 8: ModelID: doc2vec_dm0_vec100_win10_min4_epochs3 
+Test fold: 0; 
+ Accuracy: 0.740000 
+ Std. Dev: 0.096954 
+Test fold: 1; 
+ Accuracy: 0.755000 
+ Std. Dev: 0.072284 
+Test fold: 2; 
+ Accuracy: 0.740000 
+ Std. Dev: 0.106771 
+Test fold: 3; 
+ Accuracy: 0.740000 
+ Std. Dev: 0.096954 
+Test fold: 4; 
+ Accuracy: 0.745000 
+ Std. Dev: 0.112805 
+Test fold: 5; 
+ Accuracy: 0.740000 
+ Std. Dev: 0.076811 
+Test fold: 6; 
+ Accuracy: 0.800000 
+ Std. Dev: 0.086603 
+Test fold: 7; 
+ Accuracy: 0.645000 
+ Std. Dev: 0.101119 
+Test fold: 8; 
+ Accuracy: 0.730000 
+ Std. Dev: 0.067823 
+Test fold: 9; 
+ Accuracy: 0.785000 
+ Std. Dev: 0.100125 
+
+ 
+Average of performances across folds: 
+Accuracy across folds: 0.785 
+Std. Dev across folds: 0.100 
+
+
+----------- ** Q 8: ModelID: doc2vec_dm0_vec100_win10_min4_epochs5 ** ---------------- 
+Q 8: ModelID: doc2vec_dm0_vec100_win10_min4_epochs5 
+Test fold: 0; 
+ Accuracy: 0.770000 
+ Std. Dev: 0.097980 
+Test fold: 1; 
+ Accuracy: 0.810000 
+ Std. Dev: 0.113578 
+Test fold: 2; 
+ Accuracy: 0.815000 
+ Std. Dev: 0.074330 
+Test fold: 3; 
+ Accuracy: 0.805000 
+ Std. Dev: 0.075664 
+Test fold: 4; 
+ Accuracy: 0.785000 
+ Std. Dev: 0.070887 
+Test fold: 5; 
+ Accuracy: 0.735000 
+ Std. Dev: 0.074330 
+Test fold: 6; 
+ Accuracy: 0.785000 
+ Std. Dev: 0.059372 
+Test fold: 7; 
+ Accuracy: 0.760000 
+ Std. Dev: 0.086023 
+Test fold: 8; 
+ Accuracy: 0.775000 
+ Std. Dev: 0.064226 
+Test fold: 9; 
+ Accuracy: 0.835000 
+ Std. Dev: 0.086747 
+
+ 
+Average of performances across folds: 
+Accuracy across folds: 0.835 
+Std. Dev across folds: 0.087 
+
+
+----------- ** Q 8: ModelID: doc2vec_dm1_vec50_win5_min2_epochs3 ** ---------------- 
+Q 8: ModelID: doc2vec_dm1_vec50_win5_min2_epochs3 
+Test fold: 0; 
+ Accuracy: 0.735000 
+ Std. Dev: 0.130480 
+Test fold: 1; 
+ Accuracy: 0.710000 
+ Std. Dev: 0.139284 
+Test fold: 2; 
+ Accuracy: 0.700000 
+ Std. Dev: 0.092195 
+Test fold: 3; 
+ Accuracy: 0.730000 
+ Std. Dev: 0.110000 
+Test fold: 4; 
+ Accuracy: 0.765000 
+ Std. Dev: 0.097596 
+Test fold: 5; 
+ Accuracy: 0.730000 
+ Std. Dev: 0.092736 
+Test fold: 6; 
+ Accuracy: 0.780000 
+ Std. Dev: 0.055678 
+Test fold: 7; 
+ Accuracy: 0.745000 
+ Std. Dev: 0.075664 
+Test fold: 8; 
+ Accuracy: 0.740000 
+ Std. Dev: 0.130000 
+Test fold: 9; 
+ Accuracy: 0.765000 
+ Std. Dev: 0.105000 
+
+ 
+Average of performances across folds: 
+Accuracy across folds: 0.765 
+Std. Dev across folds: 0.105 
+
+
+----------- ** Q 8: ModelID: doc2vec_dm1_vec50_win5_min2_epochs5 ** ---------------- 
+Q 8: ModelID: doc2vec_dm1_vec50_win5_min2_epochs5 
+Test fold: 0; 
+ Accuracy: 0.765000 
+ Std. Dev: 0.143265 
+Test fold: 1; 
+ Accuracy: 0.720000 
+ Std. Dev: 0.153623 
+Test fold: 2; 
+ Accuracy: 0.710000 
+ Std. Dev: 0.109087 
+Test fold: 3; 
+ Accuracy: 0.740000 
+ Std. Dev: 0.094340 
+Test fold: 4; 
+ Accuracy: 0.725000 
+ Std. Dev: 0.087321 
+Test fold: 5; 
+ Accuracy: 0.760000 
+ Std. Dev: 0.066332 
+Test fold: 6; 
+ Accuracy: 0.720000 
+ Std. Dev: 0.092736 
+Test fold: 7; 
+ Accuracy: 0.730000 
+ Std. Dev: 0.071414 
+Test fold: 8; 
+ Accuracy: 0.695000 
+ Std. Dev: 0.047170 
+Test fold: 9; 
+ Accuracy: 0.750000 
+ Std. Dev: 0.097468 
+
+ 
+Average of performances across folds: 
+Accuracy across folds: 0.750 
+Std. Dev across folds: 0.097 
+
+
+----------- ** Q 8: ModelID: doc2vec_dm1_vec50_win5_min4_epochs3 ** ---------------- 
+Q 8: ModelID: doc2vec_dm1_vec50_win5_min4_epochs3 
+Test fold: 0; 
+ Accuracy: 0.710000 
+ Std. Dev: 0.106771 
+Test fold: 1; 
+ Accuracy: 0.730000 
+ Std. Dev: 0.118743 
+Test fold: 2; 
+ Accuracy: 0.725000 
+ Std. Dev: 0.087321 
+Test fold: 3; 
+ Accuracy: 0.750000 
+ Std. Dev: 0.116190 
+Test fold: 4; 
+ Accuracy: 0.700000 
+ Std. Dev: 0.122474 
+Test fold: 5; 
+ Accuracy: 0.765000 
+ Std. Dev: 0.074330 
+Test fold: 6; 
+ Accuracy: 0.780000 
+ Std. Dev: 0.097980 
+Test fold: 7; 
+ Accuracy: 0.745000 
+ Std. Dev: 0.072284 
+Test fold: 8; 
+ Accuracy: 0.750000 
+ Std. Dev: 0.080623 
+Test fold: 9; 
+ Accuracy: 0.715000 
+ Std. Dev: 0.055000 
+
+ 
+Average of performances across folds: 
+Accuracy across folds: 0.715 
+Std. Dev across folds: 0.055 
+
+
+----------- ** Q 8: ModelID: doc2vec_dm1_vec50_win5_min4_epochs5 ** ---------------- 
+Q 8: ModelID: doc2vec_dm1_vec50_win5_min4_epochs5 
+Test fold: 0; 
+ Accuracy: 0.710000 
+ Std. Dev: 0.144568 
+Test fold: 1; 
+ Accuracy: 0.700000 
+ Std. Dev: 0.136015 
+Test fold: 2; 
+ Accuracy: 0.735000 
+ Std. Dev: 0.120520 
+Test fold: 3; 
+ Accuracy: 0.725000 
+ Std. Dev: 0.105475 
+Test fold: 4; 
+ Accuracy: 0.740000 
+ Std. Dev: 0.086023 
+Test fold: 5; 
+ Accuracy: 0.755000 
+ Std. Dev: 0.078899 
+Test fold: 6; 
+ Accuracy: 0.725000 
+ Std. Dev: 0.092871 
+Test fold: 7; 
+ Accuracy: 0.740000 
+ Std. Dev: 0.088882 
+Test fold: 8; 
+ Accuracy: 0.745000 
+ Std. Dev: 0.101119 
+Test fold: 9; 
+ Accuracy: 0.765000 
+ Std. Dev: 0.095000 
+
+ 
+Average of performances across folds: 
+Accuracy across folds: 0.765 
+Std. Dev across folds: 0.095 
+
+
+----------- ** Q 8: ModelID: doc2vec_dm1_vec50_win10_min2_epochs3 ** ---------------- 
+Q 8: ModelID: doc2vec_dm1_vec50_win10_min2_epochs3 
+Test fold: 0; 
+ Accuracy: 0.740000 
+ Std. Dev: 0.109087 
+Test fold: 1; 
+ Accuracy: 0.730000 
+ Std. Dev: 0.122882 
+Test fold: 2; 
+ Accuracy: 0.755000 
+ Std. Dev: 0.098615 
+Test fold: 3; 
+ Accuracy: 0.770000 
+ Std. Dev: 0.074833 
+Test fold: 4; 
+ Accuracy: 0.670000 
+ Std. Dev: 0.118743 
+Test fold: 5; 
+ Accuracy: 0.775000 
+ Std. Dev: 0.090139 
+Test fold: 6; 
+ Accuracy: 0.760000 
+ Std. Dev: 0.070000 
+Test fold: 7; 
+ Accuracy: 0.755000 
+ Std. Dev: 0.090692 
+Test fold: 8; 
+ Accuracy: 0.770000 
+ Std. Dev: 0.078102 
+Test fold: 9; 
+ Accuracy: 0.780000 
+ Std. Dev: 0.122882 
+
+ 
+Average of performances across folds: 
+Accuracy across folds: 0.780 
+Std. Dev across folds: 0.123 
+
+
+----------- ** Q 8: ModelID: doc2vec_dm1_vec50_win10_min2_epochs5 ** ---------------- 
+Q 8: ModelID: doc2vec_dm1_vec50_win10_min2_epochs5 
+Test fold: 0; 
+ Accuracy: 0.745000 
+ Std. Dev: 0.108282 
+Test fold: 1; 
+ Accuracy: 0.745000 
+ Std. Dev: 0.136839 
+Test fold: 2; 
+ Accuracy: 0.735000 
+ Std. Dev: 0.070887 
+Test fold: 3; 
+ Accuracy: 0.725000 
+ Std. Dev: 0.120934 
+Test fold: 4; 
+ Accuracy: 0.710000 
+ Std. Dev: 0.101980 
+Test fold: 5; 
+ Accuracy: 0.725000 
+ Std. Dev: 0.068007 
+Test fold: 6; 
+ Accuracy: 0.770000 
+ Std. Dev: 0.060000 
+Test fold: 7; 
+ Accuracy: 0.715000 
+ Std. Dev: 0.070887 
+Test fold: 8; 
+ Accuracy: 0.740000 
+ Std. Dev: 0.091652 
+Test fold: 9; 
+ Accuracy: 0.805000 
+ Std. Dev: 0.085000 
+
+ 
+Average of performances across folds: 
+Accuracy across folds: 0.805 
+Std. Dev across folds: 0.085 
+
+
+----------- ** Q 8: ModelID: doc2vec_dm1_vec50_win10_min4_epochs3 ** ---------------- 
+Q 8: ModelID: doc2vec_dm1_vec50_win10_min4_epochs3 
+Test fold: 0; 
+ Accuracy: 0.745000 
+ Std. Dev: 0.105948 
+Test fold: 1; 
+ Accuracy: 0.705000 
+ Std. Dev: 0.155644 
+Test fold: 2; 
+ Accuracy: 0.720000 
+ Std. Dev: 0.102956 
+Test fold: 3; 
+ Accuracy: 0.750000 
+ Std. Dev: 0.089443 
+Test fold: 4; 
+ Accuracy: 0.725000 
+ Std. Dev: 0.107819 
+Test fold: 5; 
+ Accuracy: 0.765000 
+ Std. Dev: 0.089582 
+Test fold: 6; 
+ Accuracy: 0.780000 
+ Std. Dev: 0.097980 
+Test fold: 7; 
+ Accuracy: 0.750000 
+ Std. Dev: 0.050000 
+Test fold: 8; 
+ Accuracy: 0.785000 
+ Std. Dev: 0.083815 
+Test fold: 9; 
+ Accuracy: 0.780000 
+ Std. Dev: 0.081240 
+
+ 
+Average of performances across folds: 
+Accuracy across folds: 0.780 
+Std. Dev across folds: 0.081 
+
+
+----------- ** Q 8: ModelID: doc2vec_dm1_vec50_win10_min4_epochs5 ** ---------------- 
+Q 8: ModelID: doc2vec_dm1_vec50_win10_min4_epochs5 
+Test fold: 0; 
+ Accuracy: 0.745000 
+ Std. Dev: 0.068739 
+Test fold: 1; 
+ Accuracy: 0.770000 
+ Std. Dev: 0.122882 
+Test fold: 2; 
+ Accuracy: 0.745000 
+ Std. Dev: 0.127377 
+Test fold: 3; 
+ Accuracy: 0.805000 
+ Std. Dev: 0.119269 
+Test fold: 4; 
+ Accuracy: 0.750000 
+ Std. Dev: 0.086603 
+Test fold: 5; 
+ Accuracy: 0.770000 
+ Std. Dev: 0.087178 
+Test fold: 6; 
+ Accuracy: 0.755000 
+ Std. Dev: 0.096047 
+Test fold: 7; 
+ Accuracy: 0.760000 
+ Std. Dev: 0.096954 
+Test fold: 8; 
+ Accuracy: 0.730000 
+ Std. Dev: 0.074833 
+Test fold: 9; 
+ Accuracy: 0.800000 
+ Std. Dev: 0.063246 
+
+ 
+Average of performances across folds: 
+Accuracy across folds: 0.800 
+Std. Dev across folds: 0.063 
+
+
+----------- ** Q 8: ModelID: doc2vec_dm1_vec100_win5_min2_epochs3 ** ---------------- 
+Q 8: ModelID: doc2vec_dm1_vec100_win5_min2_epochs3 
+Test fold: 0; 
+ Accuracy: 0.735000 
+ Std. Dev: 0.097596 
+Test fold: 1; 
+ Accuracy: 0.790000 
+ Std. Dev: 0.111355 
+Test fold: 2; 
+ Accuracy: 0.745000 
+ Std. Dev: 0.135000 
+Test fold: 3; 
+ Accuracy: 0.740000 
+ Std. Dev: 0.128062 
+Test fold: 4; 
+ Accuracy: 0.700000 
+ Std. Dev: 0.118322 
+Test fold: 5; 
+ Accuracy: 0.775000 
+ Std. Dev: 0.068007 
+Test fold: 6; 
+ Accuracy: 0.775000 
+ Std. Dev: 0.092871 
+Test fold: 7; 
+ Accuracy: 0.745000 
+ Std. Dev: 0.082006 
+Test fold: 8; 
+ Accuracy: 0.745000 
+ Std. Dev: 0.085000 
+Test fold: 9; 
+ Accuracy: 0.775000 
+ Std. Dev: 0.095525 
+
+ 
+Average of performances across folds: 
+Accuracy across folds: 0.775 
+Std. Dev across folds: 0.096 
+
+
+----------- ** Q 8: ModelID: doc2vec_dm1_vec100_win5_min2_epochs5 ** ---------------- 
+Q 8: ModelID: doc2vec_dm1_vec100_win5_min2_epochs5 
+Test fold: 0; 
+ Accuracy: 0.785000 
+ Std. Dev: 0.097596 
+Test fold: 1; 
+ Accuracy: 0.765000 
+ Std. Dev: 0.114127 
+Test fold: 2; 
+ Accuracy: 0.780000 
+ Std. Dev: 0.116619 
+Test fold: 3; 
+ Accuracy: 0.765000 
+ Std. Dev: 0.097596 
+Test fold: 4; 
+ Accuracy: 0.745000 
+ Std. Dev: 0.119269 
+Test fold: 5; 
+ Accuracy: 0.775000 
+ Std. Dev: 0.092871 
+Test fold: 6; 
+ Accuracy: 0.765000 
+ Std. Dev: 0.077621 
+Test fold: 7; 
+ Accuracy: 0.720000 
+ Std. Dev: 0.060000 
+Test fold: 8; 
+ Accuracy: 0.770000 
+ Std. Dev: 0.071414 
+Test fold: 9; 
+ Accuracy: 0.780000 
+ Std. Dev: 0.092736 
+
+ 
+Average of performances across folds: 
+Accuracy across folds: 0.780 
+Std. Dev across folds: 0.093 
+
+
+----------- ** Q 8: ModelID: doc2vec_dm1_vec100_win5_min4_epochs3 ** ---------------- 
+Q 8: ModelID: doc2vec_dm1_vec100_win5_min4_epochs3 
+Test fold: 0; 
+ Accuracy: 0.745000 
+ Std. Dev: 0.150748 
+Test fold: 1; 
+ Accuracy: 0.775000 
+ Std. Dev: 0.126984 
+Test fold: 2; 
+ Accuracy: 0.705000 
+ Std. Dev: 0.119269 
+Test fold: 3; 
+ Accuracy: 0.800000 
+ Std. Dev: 0.116190 
+Test fold: 4; 
+ Accuracy: 0.720000 
+ Std. Dev: 0.128841 
+Test fold: 5; 
+ Accuracy: 0.770000 
+ Std. Dev: 0.092736 
+Test fold: 6; 
+ Accuracy: 0.765000 
+ Std. Dev: 0.097596 
+Test fold: 7; 
+ Accuracy: 0.730000 
+ Std. Dev: 0.084261 
+Test fold: 8; 
+ Accuracy: 0.745000 
+ Std. Dev: 0.096047 
+Test fold: 9; 
+ Accuracy: 0.790000 
+ Std. Dev: 0.086023 
+
+ 
+Average of performances across folds: 
+Accuracy across folds: 0.790 
+Std. Dev across folds: 0.086 
+
+
+----------- ** Q 8: ModelID: doc2vec_dm1_vec100_win5_min4_epochs5 ** ---------------- 
+Q 8: ModelID: doc2vec_dm1_vec100_win5_min4_epochs5 
+Test fold: 0; 
+ Accuracy: 0.775000 
+ Std. Dev: 0.098107 
+Test fold: 1; 
+ Accuracy: 0.765000 
+ Std. Dev: 0.155000 
+Test fold: 2; 
+ Accuracy: 0.760000 
+ Std. Dev: 0.076811 
+Test fold: 3; 
+ Accuracy: 0.800000 
+ Std. Dev: 0.132288 
+Test fold: 4; 
+ Accuracy: 0.755000 
+ Std. Dev: 0.115000 
+Test fold: 5; 
+ Accuracy: 0.785000 
+ Std. Dev: 0.059372 
+Test fold: 6; 
+ Accuracy: 0.820000 
+ Std. Dev: 0.095394 
+Test fold: 7; 
+ Accuracy: 0.795000 
+ Std. Dev: 0.093408 
+Test fold: 8; 
+ Accuracy: 0.760000 
+ Std. Dev: 0.094340 
+Test fold: 9; 
+ Accuracy: 0.795000 
+ Std. Dev: 0.087892 
+
+ 
+Average of performances across folds: 
+Accuracy across folds: 0.795 
+Std. Dev across folds: 0.088 
+
+
+----------- ** Q 8: ModelID: doc2vec_dm1_vec100_win10_min2_epochs3 ** ---------------- 
+Q 8: ModelID: doc2vec_dm1_vec100_win10_min2_epochs3 
+Test fold: 0; 
+ Accuracy: 0.760000 
+ Std. Dev: 0.096954 
+Test fold: 1; 
+ Accuracy: 0.770000 
+ Std. Dev: 0.114455 
+Test fold: 2; 
+ Accuracy: 0.785000 
+ Std. Dev: 0.074330 
+Test fold: 3; 
+ Accuracy: 0.785000 
+ Std. Dev: 0.083815 
+Test fold: 4; 
+ Accuracy: 0.690000 
+ Std. Dev: 0.104403 
+Test fold: 5; 
+ Accuracy: 0.755000 
+ Std. Dev: 0.085000 
+Test fold: 6; 
+ Accuracy: 0.770000 
+ Std. Dev: 0.071414 
+Test fold: 7; 
+ Accuracy: 0.745000 
+ Std. Dev: 0.119269 
+Test fold: 8; 
+ Accuracy: 0.735000 
+ Std. Dev: 0.092331 
+Test fold: 9; 
+ Accuracy: 0.775000 
+ Std. Dev: 0.107819 
+
+ 
+Average of performances across folds: 
+Accuracy across folds: 0.775 
+Std. Dev across folds: 0.108 
+
+
+----------- ** Q 8: ModelID: doc2vec_dm1_vec100_win10_min2_epochs5 ** ---------------- 
+Q 8: ModelID: doc2vec_dm1_vec100_win10_min2_epochs5 
+Test fold: 0; 
+ Accuracy: 0.750000 
+ Std. Dev: 0.111803 
+Test fold: 1; 
+ Accuracy: 0.815000 
+ Std. Dev: 0.089582 
+Test fold: 2; 
+ Accuracy: 0.790000 
+ Std. Dev: 0.104403 
+Test fold: 3; 
+ Accuracy: 0.780000 
+ Std. Dev: 0.092736 
+Test fold: 4; 
+ Accuracy: 0.725000 
+ Std. Dev: 0.125000 
+Test fold: 5; 
+ Accuracy: 0.825000 
+ Std. Dev: 0.051235 
+Test fold: 6; 
+ Accuracy: 0.805000 
+ Std. Dev: 0.108282 
+Test fold: 7; 
+ Accuracy: 0.740000 
+ Std. Dev: 0.091652 
+Test fold: 8; 
+ Accuracy: 0.755000 
+ Std. Dev: 0.078899 
+Test fold: 9; 
+ Accuracy: 0.795000 
+ Std. Dev: 0.052202 
+
+ 
+Average of performances across folds: 
+Accuracy across folds: 0.795 
+Std. Dev across folds: 0.052 
+
+
+----------- ** Q 8: ModelID: doc2vec_dm1_vec100_win10_min4_epochs3 ** ---------------- 
+Q 8: ModelID: doc2vec_dm1_vec100_win10_min4_epochs3 
+Test fold: 0; 
+ Accuracy: 0.735000 
+ Std. Dev: 0.143265 
+Test fold: 1; 
+ Accuracy: 0.750000 
+ Std. Dev: 0.158114 
+Test fold: 2; 
+ Accuracy: 0.765000 
+ Std. Dev: 0.118427 
+Test fold: 3; 
+ Accuracy: 0.740000 
+ Std. Dev: 0.096954 
+Test fold: 4; 
+ Accuracy: 0.735000 
+ Std. Dev: 0.120520 
+Test fold: 5; 
+ Accuracy: 0.750000 
+ Std. Dev: 0.067082 
+Test fold: 6; 
+ Accuracy: 0.800000 
+ Std. Dev: 0.086603 
+Test fold: 7; 
+ Accuracy: 0.760000 
+ Std. Dev: 0.066332 
+Test fold: 8; 
+ Accuracy: 0.740000 
+ Std. Dev: 0.109087 
+Test fold: 9; 
+ Accuracy: 0.820000 
+ Std. Dev: 0.102956 
+
+ 
+Average of performances across folds: 
+Accuracy across folds: 0.820 
+Std. Dev across folds: 0.103 
+
+
+----------- ** Q 8: ModelID: doc2vec_dm1_vec100_win10_min4_epochs5 ** ---------------- 
+Q 8: ModelID: doc2vec_dm1_vec100_win10_min4_epochs5 
+Test fold: 0; 
+ Accuracy: 0.780000 
+ Std. Dev: 0.116619 
+Test fold: 1; 
+ Accuracy: 0.780000 
+ Std. Dev: 0.116619 
+Test fold: 2; 
+ Accuracy: 0.795000 
+ Std. Dev: 0.098615 
+Test fold: 3; 
+ Accuracy: 0.800000 
+ Std. Dev: 0.092195 
+Test fold: 4; 
+ Accuracy: 0.765000 
+ Std. Dev: 0.118427 
+Test fold: 5; 
+ Accuracy: 0.780000 
+ Std. Dev: 0.071414 
+Test fold: 6; 
+ Accuracy: 0.805000 
+ Std. Dev: 0.075664 
+Test fold: 7; 
+ Accuracy: 0.785000 
+ Std. Dev: 0.086747 
+Test fold: 8; 
+ Accuracy: 0.760000 
+ Std. Dev: 0.096954 
+Test fold: 9; 
+ Accuracy: 0.810000 
+ Std. Dev: 0.101980 
+
+ 
+Average of performances across folds: 
+Accuracy across folds: 0.810 
+Std. Dev across folds: 0.102 
+
+
