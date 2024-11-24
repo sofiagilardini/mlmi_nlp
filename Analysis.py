@@ -24,9 +24,6 @@ class Evaluation():
         # reset predictions
         self.predictions=[]
 
-        print("HERE")
-
-        splits = {}
 
 
         # for list_review_fold in corpus.folds:
@@ -34,8 +31,10 @@ class Evaluation():
         #         print("here")
         #         splits[i] = list_review_fold[i]
 
-
-        results = resultsWrite()
+        if "8" not in Q_no:
+            results = resultsWrite()
+        else:
+            results = resultsWrite("IMDB_Results.txt")
 
 
         index_list = np.arange(len(corpus.folds))

@@ -61,6 +61,7 @@ class Doc2VecTrainer:
         """
         self.model = Doc2Vec(vector_size=vector_size, window=window, min_count=min_count,
                              workers=workers, dm=dm, epochs=epochs)
+        
 
     def train(self, tagged_documents, verbose = True):
         """

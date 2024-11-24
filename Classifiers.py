@@ -5,6 +5,7 @@ from Analysis import Evaluation
 import numpy as np
 from sklearn import svm
 from collections import defaultdict
+import time
 
 class NaiveBayesText(Evaluation):
     def __init__(self,smoothing,bigrams,trigrams,discard_closed_class):
@@ -331,6 +332,103 @@ class SVMText(Evaluation):
 
 
         # TODO Q6.1
+
+
+
+class SVM_Doc2Vec(Evaluation):
+
+    def __init__(self, doc2vec_model):
+
+        """
+        
+        Initialise the SVM_Doc2Vec object. 
+
+        @param doc2vec_model : Pre-trained Doc2Vec model for generating embeddings
+        """
+
+        self.svm_classifier = svm.SVC()
+        self.predictions=[]
+        self.doc2vec_model = doc2vec_model
+
+
+    def getFeatures(self, reviews):
+        
+        """
+
+        Extract features and labels for training/testing.
+
+        1. Infer document vectors using Doc2Vec model/
+        2. Extract corresponding sentiment labels
+        
+        
+        """
+
+        self.input_features = []
+        self.labels = []
+
+
+        for sentiment, review in reviews:
+            
+            doc_vector = self.doc2vec_model.infer_vector(review)
+
+            self.input_features.append(doc_vector)
+
+            self.labels.append(1 if sentiment == "POS" else -1)
+
+    
+    def train(self, reviews):
+        
+        """
+        
+        Train the SVM model using Doc2Vec embeddings
+
+        @param reviews: Training data (list of (sentiment, review) list
+
+        """
+
+        self.getFeatures(reviews)
+
+        print("Training SVM")
+        start_time = time.time()
+        self.svm_classifier.fit(self.input_features, self.labels)
+        print(f"SVM training complete: {time.time()- start_time} seconds")
+
+    
+    def test(self, reviews):
+
+        """
+
+        Test the SVM model using Doc2Vec embeddings
+
+        @param reviews: Test data, list of (sentiment, review)
+        
+        
+        """
+
+
+        test_features = [self.doc2vec_model.infer_vector(review) for _, review in reviews]
+
+        # Predict labels for the test set 
+
+        predictions = self.svm_classifier.predict(test_features)
+        true_labels = [1 if sentiment == "POS" else -1 for sentiment, _ in reviews]
+
+        self.predictions = ["+" if pred == true else "-" for pred, true in zip(predictions, true_labels)]
+
+        correct = sum(1 for true, pred in zip(true_labels, predictions) if true == pred)
+        accuracy = correct / len(true_labels)
+        print(f"Test Accuracy: {accuracy:.3f}")
+
+        return accuracy
+
+
+
+
+
+        
+
+
+    
 
 
 
