@@ -160,7 +160,7 @@ Test fold: 9;
  Std. Dev: 0.024900 
 
  
-Q 5.0 part_a 
+Q 5.0 part_a (Smoothing + Bigrams) 
 Average of performances across folds: 
 Accuracy across folds: 0.830 
 Std. Dev across folds: 0.025 
@@ -171,11 +171,11 @@ Std. Dev across folds: 0.025
  
 
  
-Q 5.0 part_b 
+Q 5.0 part_b (Smoothing + Bigrams) 
  -> Results using smoothing and bigrams are not significant with respect to smoothing only 
 
  
-Q 5.1 part_a 
+Q 5.1 part_a (Smoothing + Bigram) 
 -> Number of features Stemmed+Bigram: 500086 
 -> Number of features from Q3: 52555 
 
@@ -215,7 +215,7 @@ Test fold: 9;
  Std. Dev: 0.023580 
 
  
-Q 5.0 part_a 
+Q 5.0 part_a (Smoothing + Trigrams) 
 Average of performances across folds: 
 Accuracy across folds: 0.818 
 Std. Dev across folds: 0.024 
@@ -224,12 +224,137 @@ Std. Dev across folds: 0.024
  
 
  
-
- 
-Q 5.0 part_b 
+Q 5.0 part_b (Smoothing + Trigrams) 
  -> Results using Smoothing + Trigrams are not significant with respect to smoothing only 
 
  
-Q 5.1 part_a 
+Q 5.1 part_a (Smoothing + Trigrams) 
 -> Number of features Smoothing+Trigram: 1015074 
 -> Number of features from Q3: 52555 
+
+ 
+ 
+Q 6.0 
+Test fold: 0; 
+ Accuracy: 0.755000 
+ Std. Dev: 0.157242 
+Test fold: 1; 
+ Accuracy: 0.752500 
+ Std. Dev: 0.101520 
+Test fold: 2; 
+ Accuracy: 0.728333 
+ Std. Dev: 0.097767 
+Test fold: 3; 
+ Accuracy: 0.730000 
+ Std. Dev: 0.075250 
+Test fold: 4; 
+ Accuracy: 0.733000 
+ Std. Dev: 0.099403 
+Test fold: 5; 
+ Accuracy: 0.737500 
+ Std. Dev: 0.061717 
+Test fold: 6; 
+ Accuracy: 0.750714 
+ Std. Dev: 0.062959 
+Test fold: 7; 
+ Accuracy: 0.741875 
+ Std. Dev: 0.044987 
+Test fold: 8; 
+ Accuracy: 0.743333 
+ Std. Dev: 0.042222 
+Test fold: 9; 
+ Accuracy: 0.742000 
+ Std. Dev: 0.040447 
+
+ 
+Q 6.0 
+Average of performances across folds: 
+Accuracy across folds: 0.742 
+Std. Dev across folds: 0.040 
+
+ 
+ 
+
+ 
+--- Cross-validating SVM using NoBigram + NoTrigram [with POS] --- 
+Q 7.0 
+Test fold: 0; 
+ Accuracy: 0.730000 
+ Std. Dev: 0.173494 
+Test fold: 1; 
+ Accuracy: 0.742500 
+ Std. Dev: 0.094901 
+Test fold: 2; 
+ Accuracy: 0.726667 
+ Std. Dev: 0.088882 
+Test fold: 3; 
+ Accuracy: 0.731250 
+ Std. Dev: 0.077510 
+Test fold: 4; 
+ Accuracy: 0.730000 
+ Std. Dev: 0.105167 
+Test fold: 5; 
+ Accuracy: 0.732500 
+ Std. Dev: 0.057185 
+Test fold: 6; 
+ Accuracy: 0.747143 
+ Std. Dev: 0.060373 
+Test fold: 7; 
+ Accuracy: 0.738125 
+ Std. Dev: 0.045453 
+Test fold: 8; 
+ Accuracy: 0.741111 
+ Std. Dev: 0.038746 
+Test fold: 9; 
+ Accuracy: 0.738500 
+ Std. Dev: 0.041355 
+
+ 
+Q 7.0 
+Average of performances across folds: 
+Accuracy across folds: 0.739 
+Std. Dev across folds: 0.041 
+
+ 
+ 
+--- Cross-validating SVM using NoBigram + NoTrigram [with POS][discard closed-class]--- 
+Q 7.1 
+Test fold: 0; 
+ Accuracy: 0.780000 
+ Std. Dev: 0.107703 
+Test fold: 1; 
+ Accuracy: 0.785000 
+ Std. Dev: 0.101366 
+Test fold: 2; 
+ Accuracy: 0.783333 
+ Std. Dev: 0.052175 
+Test fold: 3; 
+ Accuracy: 0.797500 
+ Std. Dev: 0.056954 
+Test fold: 4; 
+ Accuracy: 0.797000 
+ Std. Dev: 0.051000 
+Test fold: 5; 
+ Accuracy: 0.800000 
+ Std. Dev: 0.042655 
+Test fold: 6; 
+ Accuracy: 0.807143 
+ Std. Dev: 0.039898 
+Test fold: 7; 
+ Accuracy: 0.806875 
+ Std. Dev: 0.033360 
+Test fold: 8; 
+ Accuracy: 0.806667 
+ Std. Dev: 0.024820 
+Test fold: 9; 
+ Accuracy: 0.809000 
+ Std. Dev: 0.023216 
+
+ 
+Q 7.1 
+Average of performances across folds: 
+Accuracy across folds: 0.809 
+Std. Dev across folds: 0.023 
+
+ 
+ 

@@ -382,14 +382,14 @@ results.savePrint_noQ("\n \n")
 
 
 # TODO Q6 and 6.1
-print("-------------- ** Classifying reviews using SVM 10-fold cross-eval no POS info **-------------")
+print("-------------- ** Classifying reviews using SVM 10-fold cross-eval [no POS] **-------------")
 
 
 Q_no = "Q 6.0"
 
-print_st = "--- Cross-validating SVM using NoBigram + NoTrigram [no Pos] ---"
+print_st = "--------- ** Cross-validating SVM using NoBigram + NoTrigram [no Pos] ** ---------"
 
-print(print_st)
+results.savePrint_noQ(print_st)
 SVM=SVMText(bigrams=False,trigrams=False,discard_closed_class=False)
 SVM.crossValidate(corpus, Q_no)
 smoothed_and_bigram_preds=SVM.predictions
@@ -463,5 +463,11 @@ results.savePrint_noQ("\n \n")
 
 del Q_no, print_st
 
+
+
 # question 8.0
 print("----------- ** Using document embeddings **------------")
+
+# Train on big data, (imdb) but then test the accuracy on our dataset (the same 10 folds we used for the other models)
+# So we can compare performance
+
