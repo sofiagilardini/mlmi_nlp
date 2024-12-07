@@ -389,7 +389,7 @@ class SVM_Doc2Vec(Evaluation):
         print("Training SVM")
         start_time = time.time()
         self.svm_classifier.fit(self.input_features, self.labels)
-        print(f"SVM training complete: {time.time()- start_time} seconds")
+        print(f"SVM training complete: {(time.time()- start_time):.2f} seconds")
 
     
     def test(self, reviews):

@@ -74,7 +74,7 @@ def train_and_save_model(tagged_documents, save_dir, dm, vector_size, window, mi
         epochs=epochs,
     )
 
-    trainingResults.savePrint_noQ(f"Finished training model: {model_filename}: took {time.time() - start_time} seconds")
+    trainingResults.savePrint_noQ(f"Finished training model: {model_filename}: took {(time.time() - start_time):.2f} seconds")
 
     # Save the model to disk
     model.save(model_path)
@@ -112,10 +112,10 @@ def load_model(save_dir, dm, vector_size, window, min_count, epochs):
 parameter_grid = {
 
     'dm' : [0, 1], 
-    'vector_size' : [50],
-    'window' : [5],
-    'min_count' : [4], 
-    'epochs' : [3]
+    'vector_size' : [50, 100],
+    'window' : [5, 10],
+    'min_count' : [1, 2, 4], 
+    'epochs' : [25, 50, 75]
 }
 
 model_dir = 'Doc2Vec_Models'

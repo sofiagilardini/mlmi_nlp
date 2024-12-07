@@ -1,6 +1,8 @@
 import os, codecs, sys
 from nltk.stem.porter import PorterStemmer
 from collections import defaultdict
+import re
+from preprocessing import CleanText
 
 class MovieReviewCorpus():
     def __init__(self,stemming,pos):
@@ -83,6 +85,7 @@ class MovieReviewCorpus():
 
                                 if not line:
                                     continue
+
                                 
                                 token, pos_tag = line.rsplit(maxsplit = 1)
                                     
@@ -98,6 +101,15 @@ class MovieReviewCorpus():
                                     token = self.stemmer.stem(token)
 
                                 review_tokens.append((token, pos_tag) if self.pos else token)
+                            
+
+                            breakpoint()
+
+                            cleaner = CleanText()
+
+                            review_tokens = cleaner.clean(review_tokens)
+
+                            breakpoint()
 
                             review = (label, review_tokens)
                             self.reviews.append(review)

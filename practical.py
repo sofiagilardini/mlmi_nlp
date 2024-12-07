@@ -4,6 +4,7 @@ from Statistics import SignTest
 from Classifiers import NaiveBayesText, SVMText
 from Extensions import SVMDoc2Vec
 from InfoStore import figurePlotting, resultsWrite
+from preprocessing import CleanText
 
 
 

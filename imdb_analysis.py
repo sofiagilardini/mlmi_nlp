@@ -33,7 +33,12 @@ class IMDBLoader:
             split_path = os.path.join(self.data_dir, split)
 
             # Process labeled data (pos and neg)
-            for label in ['pos', 'neg']:
+            if split == 'train':
+                labels = ['pos', 'neg', 'unsup']
+            elif split == 'test':
+                labels = ['pos', 'neg']
+
+            for label in labels:
                 label_path = os.path.join(split_path, label)
                 if os.path.exists(label_path):
                     for filename in os.listdir(label_path):
@@ -43,6 +48,8 @@ class IMDBLoader:
                                 review = f.read().strip()
                                 doc_id = f"{split}_{label}_{filename}"
                                 tagged_docs.append(TaggedDocument(words=review.split(), tags=[doc_id]))
+
+        print("Length tagged_docs", len(tagged_docs))
         return tagged_docs
 
 

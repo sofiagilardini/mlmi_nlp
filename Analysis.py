@@ -127,7 +127,7 @@ class Evaluation():
             writer = csv.writer(file)
             # Write the header if not already written
             if not os.path.exists(csv_file):
-                writer.writerow(["ModelID", "TestFold", "Accuracy", "StdDev", "DM", "VectorSize", "Window", "MinCount", "Epochs"])
+                writer.writerow(["ModelID", "TestFold", "Accuracy", "DM", "VectorSize", "Window", "MinCount", "Epochs"])
 
         # Create index list for folds
         index_list = np.arange(len(corpus.folds))
@@ -160,11 +160,23 @@ class Evaluation():
             self.train(train_files)
             self.test(test_files)
 
-            # Record results
-            accuracy = self.getAccuracy()
-            std_dev = self.getStdDeviation()
 
-            print_st = f"Test fold: {test_index}; \n Accuracy: {accuracy:.3f} \n Std. Dev: {std_dev:.3f}"
+            start_index = len(test_files)*test_index
+
+
+            fold_pred = self.predictions[start_index:]
+
+            print(f"Length self.predictions: {len(self.predictions)}")
+            print(f"Start index: {start_index}")
+            print(f"Length fold_pred: {len(fold_pred)}")
+
+
+            if len(fold_pred) > 0:
+                fold_acc = fold_pred.count("+") / len(fold_pred)
+
+            print_st = f"Test fold: {test_index}; \n Accuracy: {fold_acc}"
+
+
             print(print_st)
 
             # Write to text file
@@ -173,22 +185,19 @@ class Evaluation():
             # Write to CSV file
             with open(csv_file, mode="a", newline="") as file:
                 writer = csv.writer(file)
-                writer.writerow([modelID, test_index, accuracy, std_dev, dm, vector_size, window, min_count, epochs])
+                writer.writerow([modelID, test_index, fold_acc, dm, vector_size, window, min_count, epochs])
 
-            # Collect results for variance calculation
-            results_list.append(accuracy)
-            CV_dict[test_index] = [accuracy, std_dev]
 
         # Calculate overall statistics
-        avg_accuracy = round(np.mean(results_list), 4)
-        std_accuracy = round(np.std(results_list), 4)
+        all_folds_acc = f"{self.getAccuracy():3f}"
+        all_folds_std = f"{self.getStdDeviation():3f}"
 
 
         # Log overall statistics to text file
         results.savePrint_noQ('----------------------------------')
         results.savePrint_noQ("Average of performances across folds:")
-        results.savePrint_noQ(f"Mean performance: {avg_accuracy:.3f}")
-        results.savePrint_noQ(f"Variance between fold performances: {std_accuracy:.3f}")
+        results.savePrint_noQ(f"Mean performance: {all_folds_acc}")
+        results.savePrint_noQ(f"Variance between fold performances: {all_folds_std}")
 
         # Log overall statistics to CSV file
 
@@ -196,7 +205,8 @@ class Evaluation():
 
         with open(csv_file_summary, mode="a", newline="") as file:
             writer = csv.writer(file)
-            writer.writerow([modelID, avg_accuracy, std_accuracy, dm, vector_size, window, min_count, epochs])
+            print("DM", dm)
+            writer.writerow([modelID, all_folds_acc, all_folds_std, dm, vector_size, window, min_count, epochs])
 
         print(f"Results exported to IMDB_Results.txt and {csv_file}.")
 
