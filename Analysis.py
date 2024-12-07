@@ -36,15 +36,11 @@ class Evaluation():
 
         index_list = np.arange(len(corpus.folds))
 
-        CV_dict = {}
-
-        results_list = []
 
         if not os.path.exists('./CV_results'):
             os.makedirs("./CV_results")
 
         csv_file = f'CV_results/{Q_id}_results.csv'
-
 
 
         for counter, index in enumerate(index_list):
@@ -66,26 +62,41 @@ class Evaluation():
             self.train(train_files)
             self.test(test_files)
 
+            start_index = len(test_files)*test_index
 
-            print_st = f"Test fold: {test_index}; \n Accuracy: {self.getAccuracy():3f} \n Std. Dev: {self.getStdDeviation():3f}"
 
-            accuracy = round(self.getAccuracy(), 4)
-            std_dev = round(self.getStdDeviation(), 4)
+            fold_pred = self.predictions[start_index:]
+
+
+            if len(fold_pred) > 0:
+                fold_acc = fold_pred.count("+") / len(fold_pred)
+
+
+            print_st = f"Test fold: {test_index}; \n Accuracy: {fold_acc}"
+
 
             with open(csv_file, mode="a", newline="") as file:
                 writer = csv.writer(file)
-                writer.writerow([test_index, accuracy, std_dev])
+                writer.writerow([test_index, fold_acc])
 
-
-            print(print_st)
 
             if counter == 0:
                 results.savePrint_noQ(Q_no)
                 results.savePrint_noQ(print_st)
             else:
                 results.savePrint_noQ(print_st)
+
+            del fold_pred, fold_acc
             
-            results_list.append(self.getAccuracy())
+
+        # get Acc and Std across all folds:
+
+        all_folds_acc = f"{self.getAccuracy():3f}"
+        all_folds_std = f"{self.getStdDeviation():3f}"
+
+        results.savePrint_noQ("\nAcross all folds:")
+        results.savePrint_noQ(f"Acc: {all_folds_acc}")
+        results.savePrint_noQ(f"Std: {all_folds_std}")
 
 
         # TODO Q3
@@ -105,7 +116,7 @@ class Evaluation():
         from InfoStore import figurePlotting, resultsWrite
 
         # Reset predictions
-        # self.predictions = []
+        self.predictions = []
 
         # Initialize results file for text output
         results = resultsWrite("IMDB_Results.txt")

@@ -150,8 +150,6 @@ class NaiveBayesText(Evaluation):
         @type reviews: list of (string, list) tuples corresponding to (label, content)
         """
 
-        self.predictions = []
-
         i = 0
 
         for label, review in reviews:
