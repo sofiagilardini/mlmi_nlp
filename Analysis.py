@@ -196,8 +196,10 @@ class Evaluation():
         # Log overall statistics to text file
         results.savePrint_noQ('----------------------------------')
         results.savePrint_noQ("Average of performances across folds:")
-        results.savePrint_noQ(f"Mean performance: {all_folds_acc}")
-        results.savePrint_noQ(f"Variance between fold performances: {all_folds_std}")
+        results.savePrint_noQ(f"Average: {all_folds_acc}")
+        results.savePrint_noQ(f"Std: {all_folds_std}")
+        results.savePrint_noQ("\n")
+        results.savePrint_noQ("\n")
 
         # Log overall statistics to CSV file
 
@@ -209,6 +211,87 @@ class Evaluation():
             writer.writerow([modelID, all_folds_acc, all_folds_std, dm, vector_size, window, min_count, epochs])
 
         print(f"Results exported to IMDB_Results.txt and {csv_file}.")
+
+
+    def crossValidate_nb_svm(self,corpus, test_ID, results_path):
+
+        from InfoStore import figurePlotting, resultsWrite
+
+        """
+        function to perform 10-fold cross-validation for a classifier.
+        each classifier will be inheriting from the evaluation class so you will have access
+        to the classifier's train and test functions.
+
+        1. read reviews from corpus.folds and store 9 folds in train_files and 1 in test_files
+        2. pass data to self.train and self.test e.g., self.train(train_files)
+        3. repeat for another 9 runs making sure to test on a different fold each time
+
+        @param corpus: corpus of movie reviews
+        @type corpus: MovieReviewCorpus object
+        """
+        # # reset predictions
+        self.predictions=[]
+
+
+        
+        results = resultsWrite(results_path)
+
+        index_list = np.arange(len(corpus.folds))
+
+
+        for counter, index in enumerate(index_list):
+            test_index = index
+            train_files = []
+            test_files = []
+            
+            training_index_list = np.delete(index_list, index)
+            print(f'training: {training_index_list}, test: {test_index}')
+
+            # train_files = corpus.folds[training_index_list]
+            # test_files = corpus.folds[test_index]
+
+            for fold_indx in training_index_list:
+                train_files.extend(corpus.folds[fold_indx])
+
+            test_files = corpus.folds[test_index]
+
+            self.train(train_files)
+            self.test(test_files)
+
+            start_index = len(test_files)*test_index
+
+
+            fold_pred = self.predictions[start_index:]
+
+
+            if len(fold_pred) > 0:
+                fold_acc = fold_pred.count("+") / len(fold_pred)
+
+
+            print_st = f"Test fold: {test_index}; \n Accuracy: {fold_acc}"
+
+            if counter == 0:
+                results.savePrint_noQ('\n')
+                results.savePrint_noQ(f"-----------------{test_ID}----------------------")
+                results.savePrint_noQ(print_st)
+            else:
+                results.savePrint_noQ(print_st)
+
+            del fold_pred, fold_acc
+            
+
+        # get Acc and Std across all folds:
+
+        all_folds_acc = f"{self.getAccuracy():3f}"
+        all_folds_std = f"{self.getStdDeviation():3f}"
+
+        results.savePrint_noQ("\nAcross all folds:")
+        results.savePrint_noQ(f"Acc: {all_folds_acc}")
+        results.savePrint_noQ(f"Std: {all_folds_std}")
+        results.savePrint_noQ('\n')
+
+
+    
 
 
     def getStdDeviation(self):

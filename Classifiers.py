@@ -198,7 +198,7 @@ class SVMText(Evaluation):
         @param discard_closed_class: restrict unigrams to nouns, adjectives, adverbs and verbs?
         @type discard_closed_class: boolean
         """
-        self.svm_classifier = svm.SVC()
+        self.svm_classifier = svm.SVC(kernel='linear')
         self.predictions=[]
         self.vocabulary=set()
         # add in bigrams?
@@ -292,7 +292,7 @@ class SVMText(Evaluation):
         self.getFeatures(reviews)
 
         # reset SVM classifier and train SVM model
-        self.svm_classifier = svm.SVC()
+        self.svm_classifier = svm.SVC(kernel = 'linear')
         self.svm_classifier.fit(self.input_features, self.labels)
 
     def test(self,reviews):
@@ -344,7 +344,7 @@ class SVM_Doc2Vec(Evaluation):
         @param doc2vec_model : Pre-trained Doc2Vec model for generating embeddings
         """
 
-        self.svm_classifier = svm.SVC()
+        self.svm_classifier = svm.SVC(kernel = 'linear')
         self.predictions=[]
         self.doc2vec_model = doc2vec_model
 

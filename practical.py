@@ -8,7 +8,8 @@ from preprocessing import CleanText
 
 
 
-results = resultsWrite("Results.txt")
+resultsdoc = "Results.txt"
+results = resultsWrite(resultsdoc)
 results.refreshResults()
 
 plotting = figurePlotting()
@@ -167,7 +168,7 @@ print("--- classifying reviews using 10-fold cross-evaluation ---")
 # using previous instantiated object
 NB.crossValidate(corpus, Q_no = "Q 3.0", Q_id=Q_id)
 # using cross-eval for smoothed predictions from now on
-smoothed_preds=NB.predictions # this just takes the latest fold ? 
+smoothed_preds=NB.predictions 
 
 
 del Q_no, Q_id
@@ -201,10 +202,10 @@ results.savePrint_noQ("\n")
 
 Q_no = "Q 4.1"
 
-p_value=signTest.getSignificance(non_smoothed_preds,smoothed_preds)
+p_value=signTest.getSignificance(stemmed_preds,smoothed_preds)
 significance = "significant" if p_value < 0.05 else "not significant"
 
-print_st = f"-> Results using smoothing are {significance} with respect to no smoothing <-"
+print_st = f"-> Results using stemming are {significance} with respect to no stemming <-"
 print(print_st)
 results.savePrint(Q_no, print_st)
 

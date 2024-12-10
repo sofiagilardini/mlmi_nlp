@@ -55,33 +55,33 @@ def train_and_save_model(tagged_documents, save_dir, dm, vector_size, window, mi
     model_filename = f"doc2vec_dm{dm}_vec{vector_size}_win{window}_min{min_count}_epochs{epochs}.model"
     model_path = os.path.join(save_dir, model_filename)
 
-    # Check if the model file already exists
-    if os.path.exists(model_path):
-        print(f"Model {model_filename} already exists. Skipping training.")
-        return Doc2Vec.load(model_path)  # Load and return the existing model
+    # # Check if the model file already exists
+    # if os.path.exists(model_path):
+    #     print(f"Model {model_filename} already exists. Skipping training.")
+    #     return Doc2Vec.load(model_path)  # Load and return the existing model
 
-    # Train the Doc2Vec model
-    trainingResults.savePrint_noQ(f"Training model: {model_filename}...")
-    start_time = time.time()
+    # # Train the Doc2Vec model
+    # trainingResults.savePrint_noQ(f"Training model: {model_filename}...")
+    # start_time = time.time()
 
-    model = Doc2Vec(
-        tagged_documents,
-        vector_size=vector_size,
-        window=window,
-        min_count=min_count,
-        workers=workers,
-        dm=dm,
-        epochs=epochs,
-    )
+    # model = Doc2Vec(
+    #     tagged_documents,
+    #     vector_size=vector_size,
+    #     window=window,
+    #     min_count=min_count,
+    #     workers=workers,
+    #     dm=dm,
+    #     epochs=epochs,
+    # )
 
-    trainingResults.savePrint_noQ(f"Finished training model: {model_filename}: took {(time.time() - start_time):.2f} seconds")
+    # trainingResults.savePrint_noQ(f"Finished training model: {model_filename}: took {(time.time() - start_time):.2f} seconds")
 
-    # Save the model to disk
-    model.save(model_path)
-    trainingResults.savePrint_noQ(f"Model saved: {model_path}")
-    trainingResults.savePrint_noQ('\n')
+    # # Save the model to disk
+    # model.save(model_path)
+    # trainingResults.savePrint_noQ(f"Model saved: {model_path}")
+    # trainingResults.savePrint_noQ('\n')
 
-    return model
+    # return model
 
 
 def load_model(save_dir, dm, vector_size, window, min_count, epochs):
@@ -163,5 +163,6 @@ for dm, vector_size, window, min_count, epochs in param_combinations:
 
     SVM_d2v = SVM_Doc2Vec(doc2vec_model=doc2vec_model)
     SVM_d2v.crossValidate_Doc2Vec(corpus, modelID=model_id)
+    
 
 

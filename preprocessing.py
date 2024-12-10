@@ -2,39 +2,63 @@ import nltk
 nltk.download('stopwords')
 import re
 
+import string
+
 from nltk.corpus import stopwords
 
 
 stop_words = set(stopwords.words('english'))
 
 
-class CleanText():
-
+class CleanText:
     def __init__(self):
-
         """
-        Initialise CleanText class 
+        Initialise CleanText class with stopwords and an optional contraction map.
         """
+        self.stopwords = set(stopwords.words('english'))
+        self.contraction_map = {
+            "can't": "can not",
+            "won't": "will not",
+            "shouldn't": "should not",
+            "don't": "do not",
+            "isn't": "is not",
+            "aren't": "are not",
+            "didn't": "did not",
+        }
 
-        self.stop_words= stop_words
+    def clean(self, tokens, include_pos):
+        """
+        Clean a list of tokens, with or without POS tags.
+        :param tokens: List of tokens (with or without POS tags).
+        :param include_pos: Boolean indicating whether tokens include POS tags.
+        :return: Cleaned list of tokens, in the same format as input.
+        """
+        cleaned_tokens = []
 
-    
-    def clean(self, text):
+        for token in tokens:
+            if include_pos:
+                word, pos_tag = token
+            else:
+                word = token
 
-        text = [word.lower() for word in text]
+            # Lowercase and expand contractions
+            word = word.lower()
+            if word in self.contraction_map:
+                word = self.contraction_map[word]
 
-        text = [word for word in text if re.fullmatch(r'\w+', word)]
 
-        # # remove special characters and html tags
+            if word.strip() == "" or all(char in string.punctuation for char in word):
+                continue
 
-        # text = re.sub(r'<.*?>', '', text)
-        # text = re.sub(r'[^\w\s]', '', text)
-        # text = re.sub(r'[\t\n]', ' ', text)
+            # --- nltk stopwords include very and don't therefore choosing not to remove them ---- # 
+            # # Skip stopwords
+            # if word in self.stopwords:
+            #     continue
 
-        # if type(text) == list:
-        #     words = text.split()
+            # Append cleaned token
+            if include_pos:
+                cleaned_tokens.append((word, pos_tag))
+            else:
+                cleaned_tokens.append(word)
 
-        filtered_words = [word for word in text if word not in self.stop_words]
-
-        return filtered_words
-
+        return cleaned_tokens

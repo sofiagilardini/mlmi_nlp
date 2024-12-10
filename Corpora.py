@@ -29,7 +29,7 @@ class MovieReviewCorpus():
         # import movie reviews
         self.get_reviews()
 
-    def get_reviews(self):
+    def get_reviews(self, preprocess = True):
         """
         processing of movie reviews.
 
@@ -99,17 +99,15 @@ class MovieReviewCorpus():
                                 if self.stemmer:
 
                                     token = self.stemmer.stem(token)
+                                
 
                                 review_tokens.append((token, pos_tag) if self.pos else token)
                             
 
-                            breakpoint()
+                            if preprocess:
+                                cleaner = CleanText()
+                                review_tokens = cleaner.clean(review_tokens, self.pos)
 
-                            cleaner = CleanText()
-
-                            review_tokens = cleaner.clean(review_tokens)
-
-                            breakpoint()
 
                             review = (label, review_tokens)
                             self.reviews.append(review)
