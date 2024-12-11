@@ -1,0 +1,232 @@
+
+ 
+-----------------TestID: 000---------------------- 
+Test fold: 0; 
+ Accuracy: 0.78 
+Test fold: 1; 
+ Accuracy: 0.82 
+Test fold: 2; 
+ Accuracy: 0.84 
+Test fold: 3; 
+ Accuracy: 0.83 
+Test fold: 4; 
+ Accuracy: 0.81 
+Test fold: 5; 
+ Accuracy: 0.835 
+Test fold: 6; 
+ Accuracy: 0.82 
+Test fold: 7; 
+ Accuracy: 0.82 
+Test fold: 8; 
+ Accuracy: 0.75 
+Test fold: 9; 
+ Accuracy: 0.825 
+
+Across all folds: 
+Acc: 0.813000 
+Std: 0.026192 
+
+ 
+
+ 
+-----------------TestID: 001---------------------- 
+Test fold: 0; 
+ Accuracy: 0.775 
+Test fold: 1; 
+ Accuracy: 0.815 
+Test fold: 2; 
+ Accuracy: 0.83 
+Test fold: 3; 
+ Accuracy: 0.83 
+Test fold: 4; 
+ Accuracy: 0.81 
+Test fold: 5; 
+ Accuracy: 0.82 
+Test fold: 6; 
+ Accuracy: 0.835 
+Test fold: 7; 
+ Accuracy: 0.81 
+Test fold: 8; 
+ Accuracy: 0.755 
+Test fold: 9; 
+ Accuracy: 0.825 
+
+Across all folds: 
+Acc: 0.810500 
+Std: 0.024541 
+
+ 
+
+ 
+-----------------TestID: 010---------------------- 
+Test fold: 0; 
+ Accuracy: 0.77 
+Test fold: 1; 
+ Accuracy: 0.83 
+Test fold: 2; 
+ Accuracy: 0.84 
+Test fold: 3; 
+ Accuracy: 0.85 
+Test fold: 4; 
+ Accuracy: 0.785 
+Test fold: 5; 
+ Accuracy: 0.8 
+Test fold: 6; 
+ Accuracy: 0.82 
+Test fold: 7; 
+ Accuracy: 0.84 
+Test fold: 8; 
+ Accuracy: 0.795 
+Test fold: 9; 
+ Accuracy: 0.83 
+
+Across all folds: 
+Acc: 0.816000 
+Std: 0.025475 
+
+ 
+
+ 
+-----------------TestID: 011---------------------- 
+Test fold: 0; 
+ Accuracy: 0.785 
+Test fold: 1; 
+ Accuracy: 0.82 
+Test fold: 2; 
+ Accuracy: 0.845 
+Test fold: 3; 
+ Accuracy: 0.835 
+Test fold: 4; 
+ Accuracy: 0.795 
+Test fold: 5; 
+ Accuracy: 0.81 
+Test fold: 6; 
+ Accuracy: 0.815 
+Test fold: 7; 
+ Accuracy: 0.82 
+Test fold: 8; 
+ Accuracy: 0.815 
+Test fold: 9; 
+ Accuracy: 0.815 
+
+Across all folds: 
+Acc: 0.815500 
+Std: 0.016348 
+
+ 
+
+ 
+-----------------TestID: 100---------------------- 
+Test fold: 0; 
+ Accuracy: 0.795 
+Test fold: 1; 
+ Accuracy: 0.855 
+Test fold: 2; 
+ Accuracy: 0.845 
+Test fold: 3; 
+ Accuracy: 0.865 
+Test fold: 4; 
+ Accuracy: 0.805 
+Test fold: 5; 
+ Accuracy: 0.835 
+Test fold: 6; 
+ Accuracy: 0.865 
+Test fold: 7; 
+ Accuracy: 0.84 
+Test fold: 8; 
+ Accuracy: 0.8 
+Test fold: 9; 
+ Accuracy: 0.84 
+
+Across all folds: 
+Acc: 0.834500 
+Std: 0.024642 
+
+ 
+
+ 
+-----------------TestID: 101---------------------- 
+Test fold: 0; 
+ Accuracy: 0.795 
+Test fold: 1; 
+ Accuracy: 0.855 
+Test fold: 2; 
+ Accuracy: 0.835 
+Test fold: 3; 
+ Accuracy: 0.855 
+Test fold: 4; 
+ Accuracy: 0.81 
+Test fold: 5; 
+ Accuracy: 0.83 
+Test fold: 6; 
+ Accuracy: 0.84 
+Test fold: 7; 
+ Accuracy: 0.85 
+Test fold: 8; 
+ Accuracy: 0.805 
+Test fold: 9; 
+ Accuracy: 0.82 
+
+Across all folds: 
+Acc: 0.829500 
+Std: 0.020304 
+
+ 
+
+ 
+-----------------TestID: 110---------------------- 
+Test fold: 0; 
+ Accuracy: 0.805 
+Test fold: 1; 
+ Accuracy: 0.855 
+Test fold: 2; 
+ Accuracy: 0.87 
+Test fold: 3; 
+ Accuracy: 0.845 
+Test fold: 4; 
+ Accuracy: 0.79 
+Test fold: 5; 
+ Accuracy: 0.825 
+Test fold: 6; 
+ Accuracy: 0.83 
+Test fold: 7; 
+ Accuracy: 0.86 
+Test fold: 8; 
+ Accuracy: 0.805 
+Test fold: 9; 
+ Accuracy: 0.83 
+
+Across all folds: 
+Acc: 0.831500 
+Std: 0.024905 
+
+ 
+
+ 
+-----------------TestID: 111---------------------- 
+Test fold: 0; 
+ Accuracy: 0.81 
+Test fold: 1; 
+ Accuracy: 0.86 
+Test fold: 2; 
+ Accuracy: 0.865 
+Test fold: 3; 
+ Accuracy: 0.84 
+Test fold: 4; 
+ Accuracy: 0.79 
+Test fold: 5; 
+ Accuracy: 0.805 
+Test fold: 6; 
+ Accuracy: 0.82 
+Test fold: 7; 
+ Accuracy: 0.845 
+Test fold: 8; 
+ Accuracy: 0.815 
+Test fold: 9; 
+ Accuracy: 0.815 
+
+Across all folds: 
+Acc: 0.826500 
+Std: 0.023457 
+
+ 

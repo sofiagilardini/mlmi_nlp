@@ -1,0 +1,9 @@
+TestID,N-Gram,Stemming,Number of Features,Avg Accuracy,Std Deviation,P-Value
+TestID: 000,uni,False,45284,0.81,0.026,baseline
+TestID: 001,uni,True,32340,0.81,0.025,0.929
+TestID: 010,tri,False,960218,0.82,0.025,0.911
+TestID: 011,tri,True,927346,0.82,0.016,0.929
+TestID: 100,bi,False,496561,0.83,0.025,0.348
+TestID: 101,bi,True,440350,0.83,0.020,0.474
+TestID: 110,bi+tri,False,1411495,0.83,0.025,0.421
+TestID: 111,bi+tri,True,1335356,0.83,0.023,0.561
